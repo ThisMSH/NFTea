@@ -95,3 +95,11 @@ header {
 .nftea-home span {
     color: var(--second-color);
 }
+.resize
+{ 
+    position: relative;
+    top: 115px;
+}
+.images img{
+    border-radius: 20px;
+}
