@@ -1,12 +1,16 @@
-const navBtn = document.querySelector(".nav-link-mod");
+const navBtn = document.getElementsByClassName("nav-link-mod");
 
-console.log(navBtn)
-navBtn.onmousemove = function(evt) {
-    const x = evt.pageX - navBtn.offsetLeft;
-    const y = evt.pageY - navBtn.offsetTop;
-
-    navBtn.style.setProperty("--x", x + "px");
-    navBtn.style.setProperty("--y", y + "px");
-    console.log(x)
-    console.log(y)
+for(var i = 0; i < navBtn.length; i++) {
+    var temp = navBtn[i];
+    temp.addEventListener("mouseover", hoverBtn);
 }
+
+function hoverBtn(evt) {
+    var temp = evt.target
+    const x = evt.pageX - temp.offsetLeft;
+    const y = evt.pageY - temp.offsetTop;
+
+    temp.style.setProperty("--x", x + "px");
+    temp.style.setProperty("--y", y + "px");
+}
+
