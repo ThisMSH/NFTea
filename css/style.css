@@ -7,9 +7,15 @@
 }
 :root {
     --main-color: rgb(51, 68, 85);
-    --main-borders: rgb(51 68 85 / 30%);
     --second-color: #2b57ef;
+    --second-color-light: #4068f1;
+    --second-color-lighter: #809af5;
     --third-color: #a44ed0;
+    --third-color-light: #ad60d5;
+    --third-color-lighter: #c895e3;
+    --main-borders: rgb(51 68 85 / 30%);
+    --text-color1: black;
+    --text-color2: beige;
 }
 body {
     display: flex;
@@ -19,7 +25,6 @@ header {
     z-index: 1000;
     height: 0;
 }
-
 .top-page {
     height: 100vh;
     max-height: 1080px;
@@ -92,6 +97,260 @@ header {
     font-weight: 900;
     color: var(--main-color);
 }
-.nftea-home span {
+.nftea-home span, .home-welcome span span{
     color: var(--second-color);
+}
+.home-welcome {
+    font-size: calc(60vh / 10.8);
+    font-weight: 900;
+    position: relative;
+    top: 10%;
+}
+.home-welcome span {
+    color: var(--main-color);
+}
+.text-rotate-container {
+    position: relative;
+    top: 10%;
+}
+.text-rotate {
+    font-size: calc(60vh / 10.8);
+    font-weight: 900;
+    position: absolute;
+}
+#t-r1 {
+    animation: text-rotate1 15s ease-in-out infinite;
+}
+#t-r2 {
+    animation: text-rotate2 15s ease-in-out infinite;
+}
+#t-r3 {
+    animation: text-rotate3 15s ease-in-out infinite;
+}
+#t-r4 {
+    animation: text-rotate4 15s ease-in-out infinite;
+}
+.home-welcome-btn {
+    position: relative;
+    top: 35%;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10%;
+}
+.btn-home-top {
+    position: relative;
+    width: 240px;
+    height: 80px;
+}
+.btn-home-top a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(51, 68, 85, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(51, 68, 85, 0.1);
+    border-bottom: 1px solid rgba(51, 68, 85, 0.1);
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--main-color);
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s 0.5s, color 0.5s;
+    backdrop-filter: blur(15px);
+}
+.btn-home-top:hover a {
+    letter-spacing: 1px;
+    font-size: 38px;
+    color: var(--text-color2);
+    transition: all 0.5s, color 0.5s 0.5s;
+}
+.btn-home-top a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgb(255, 255, 255, 0.5), transparent);
+    transform: skew(45deg);
+    transition: 0.5s 0.5s;
+}
+.btn-home-top:hover a::before {
+    transform: skew(45deg) translateX(250%);
+}
+.btn-home-top::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: all 0.5s, left 0.5s 0.5s;
+}
+.btn-home-top:hover::before {
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+    transition: all 0.5s 0.5s, left 0.5s;
+}
+.btn-home-top::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    transform: translateX(50%);
+    top: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: all 0.5s, right 0.5s 0.5s;
+}
+.btn-home-top:hover::after {
+    right: 50%;
+    top: 0;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    transition: all 0.5s 0.5s, right 0.5s;
+}
+.btn-home-top:nth-child(1)::before,
+.btn-home-top:nth-child(1)::after {
+    background: var(--third-color-light);
+    box-shadow: 0 0 5px var(--third-color-light),
+    0 0 15px var(--third-color-light),
+    0 0 30px var(--third-color-light),
+    0 0 60px var(--third-color-light);
+}
+.btn-home-top:nth-child(2)::before,
+.btn-home-top:nth-child(2)::after {
+    background: var(--second-color-light);
+    box-shadow: 0 0 5px var(--second-color-light),
+    0 0 15px var(--second-color-light),
+    0 0 30px var(--second-color-light),
+    0 0 60px var(--second-color-light);
+}
+.page-break {
+    position: relative;
+    height: 300px;
+    overflow-x: hidden;
+}
+.page-break svg {
+    position: absolute;
+    left: 0;
+    fill: var(--third-color);
+    stroke: var(--third-color);
+}
+.page-break svg path {
+    fill: url(#gradient-fill-pb) var(--third-color-lighter);
+}
+.container-bg-purple {
+    background: var(--third-color-lighter);
+}
+.breif-stats .col {
+    text-align: center;
+}
+.breif-stats .col p:nth-child(odd) {
+    font-size: 50px;
+    font-weight: 900;
+    background: -webkit-linear-gradient(45deg, var(--third-color) 30%, #fff 50%, var(--second-color) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+    color: var(--text-color1);
+    letter-spacing: 3px;
+}
+.breif-stats .col p:nth-child(even) {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--text-color1);
+    height: 100px;
+}
+.p-b-180 {
+    transform: rotateZ(180deg);
+}
+
+
+@keyframes text-rotate1 {
+    0% {
+        transform: rotateX(90deg);
+    }
+    3% {
+        transform: rotateX(0deg);
+    }
+    21% {
+        transform: rotateX(0deg);
+    }
+    24% {
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+@keyframes text-rotate2 {
+    0% {
+        transform: rotateX(90deg);
+    }
+    25% {
+        transform: rotateX(90deg);
+    }
+    28% {
+        transform: rotateX(0deg);
+    }
+    46% {
+        transform: rotateX(0deg);
+    }
+    49% {
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+@keyframes text-rotate3 {
+    0% {
+        transform: rotateX(90deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    53% {
+        transform: rotateX(0deg);
+    }
+    71% {
+        transform: rotateX(0deg);
+    }
+    74% {
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+@keyframes text-rotate4 {
+    0% {
+        transform: rotateX(90deg);
+    }
+    75% {
+        transform: rotateX(90deg);
+    }
+    78% {
+        transform: rotateX(0deg);
+    }
+    97% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
 }
