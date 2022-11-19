@@ -246,6 +246,22 @@
         background: var(--third-color);
     }
 }
+
+@media (max-width: 1400px) {
+    @keyframes nftea {
+        0% {
+            transform: translateY(0) scale(1);
+            background: #6245ed;
+        }
+        90% {
+            background: var(--third-color);
+        }
+        100% {
+            transform: translateY(-180px) scale(2.5);
+            background: var(--third-color);
+        }
+    }
+}
 /* End of animation of NFT cup + NFT cup nav */
 
 
@@ -361,7 +377,7 @@
     left: calc(50% + calc(120vh / 10.8));
     top: calc(120vh / 10.8);
     transform: rotate(-15deg);
-    fill: url(#gradient-fill-eth) #000;
+    fill: url(#gradient-fill-itc) #000;
 }
 .cloud-itc-ani {
     animation: cloud-itc 3s ease infinite;
