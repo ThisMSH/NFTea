@@ -92,7 +92,7 @@ header {
     font-size: 20px;
     font-weight: 600;
 }
-.nftea-home h1, .home-welcome span {
+.nftea-home h1, .home-welcome span, .nftea-footer-name span {
     font-size: calc(100vh / 10.8);
     font-weight: 900;
     color: transparent;
@@ -102,7 +102,7 @@ header {
     -webkit-background-clip: text;
     -moz-background-clip: text;
 }
-.nftea-home h1 span, .home-welcome span span {
+.nftea-home h1 span, .home-welcome span span, .nftea-footer-name span span {
     color: transparent;
     background: #000;
     text-shadow: 0 0 5px var(--second-color);
@@ -250,10 +250,14 @@ header {
     0 0 30px var(--second-color-light),
     0 0 60px var(--second-color-light);
 }
+.break-display {
+    display: inline-flex;
+    width: 100%;
+    overflow-x: hidden;
+}
 .page-break {
     position: relative;
     height: 300px;
-    overflow-x: hidden;
 }
 .p-b-purple svg {
     fill: var(--third-color);
@@ -289,8 +293,12 @@ header {
 }
 .breif-stats .col p:nth-child(even) {
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--text-color1);
+    text-shadow: 1px 1px 1px #fff,
+    1px -1px 1px #fff,
+    -1px 1px 1px #fff,
+    -1px -1px 1px #fff;
 }
 .p-b-180 {
     transform: rotateZ(180deg);
@@ -311,12 +319,12 @@ header {
     border-bottom: 4px solid var(--main-color);
     transform: translateX(-50%);
 }
-.about-text {
-    font-size: 24px;
+.home-text {
+    font-size: 26px;
     color: var(--text-color1);
     margin: 0 5%;
 }
-.team {
+.team .row .col {
     margin: 4% 0;
     min-height: 450px;
 }
@@ -492,6 +500,12 @@ header {
     color: #000;
     text-shadow: 0 0 10px #fff;
     -webkit-text-stroke-width: 1px;
+}
+footer {
+    background: linear-gradient(to bottom, var(--third-color-lighter), var(--third-color));
+}
+.nftea-footer-name span {
+    font-size: 48px;
 }
 
 @keyframes text-rotate1 {

@@ -170,8 +170,6 @@
     min-width: 0;
     min-height: 0;
     border-radius: 1px;
-    animation: nftea 6s linear infinite;
-    animation-delay: calc(var(--i) * 0.5s);
 }
 .cup-vapour-two-header {
     left: calc(50% - 27.5px);
@@ -446,3 +444,33 @@
         transform: rotateY(0);
     }
 }
+
+/* Start of some modifications in NFT cup in footer */
+
+.cup-top-footer {
+    background-color: var(--third-color-lighter);
+}
+.cup-handle-footer {
+    background: linear-gradient(var(--third-color-lighter), var(--third-color-light)) padding-box, linear-gradient(to top, var(--second-color), #5f53e2) border-box;
+}
+.cup-vapour-footer span {
+    animation: nftea-f 6s linear infinite;
+    animation-delay: calc(var(--i) * 0.5s);
+}
+
+@keyframes nftea-f {
+    0% {
+        transform: translateY(0) scale(1);
+        background: #6245ed;
+    }
+    90% {
+        background: var(--third-color);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(2.5);
+        background: var(--third-color);
+        opacity: 0;
+    }
+}
+/* End of some modifications in NFT cup in footer */
