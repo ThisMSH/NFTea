@@ -17,7 +17,7 @@
 <body>
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-md p-3">
+        <nav class="navbar navbar-expand-md p-3 header-navbar">
             <div class="container-lg">
                 <a href="" class="navbar-brand d-flex align-items-center logo">
                     <!-- Start of coffee cup in header -->
@@ -54,28 +54,34 @@
                     <!-- End of coffee cup in header -->
                     <span class="nftea-header">NF<span>Tea</span></span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto gap-2">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link nav-link-mod active">
-                                <span class="px-lg-3 px-md-2">Home</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="collection.html" class="nav-link nav-link-mod">
-                                <span class="px-lg-3 px-md-2">Collection</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link nav-link-mod">
-                                <span class="px-lg-3 px-md-2">Stats</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <button class="btn rounded-pill px-3 py-2 ms-3 btn-login"><span>Login</span></button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto gap-2">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link nav-link-mod active">
+                                    <span class="px-lg-3 px-md-2">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="collection.html" class="nav-link nav-link-mod">
+                                    <span class="px-lg-3 px-md-2">Collection</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link nav-link-mod">
+                                    <span class="px-lg-3 px-md-2">Stats</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="btn rounded-pill px-3 py-2 ms-3 btn-login"><span>Login</span></button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -83,13 +89,17 @@
 
     <!-- Main content -->
     <main>
+        <!-- Scroll to Top button -->
+        <button onclick="topFunction()" id="ScrollTop">
+            <img src="img/scroll-top-studioz.png" alt="">
+        </button>
         <!-- Top page -->
         <div class="container top-page">
             <div class="row">
-                <div class="col text-center position-relative">
+                <div class="col top-page-welcome">
                     <p class="home-welcome">
                         Welcome to <span>NF<span>Tea</span></span>,<br>where you can<br>
-                        <div class="text-rotate-container d-flex justify-content-center">
+                        <div class="text-rotate-container">
                             <div class="text-rotate" id="t-r1"><p>Explore...</p></div>
                             <div class="text-rotate" id="t-r2"><p>Collect...</p></div>
                             <div class="text-rotate" id="t-r3"><p>Sell...</p></div>
@@ -105,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col d-flex flex-column align-items-center">
+                <div class="col top-page-logo">
                     <!-- Start of the cloud -->
                     <div class="cloud">
                         <div class="cloud-itc-ani">
@@ -294,15 +304,15 @@
             </div>
             <div class="container">
                 <div class="row breif-stats">
-                    <div class="col">
+                    <div class="col-12 col-md">
                         <p>45324</p>
                         <p>Total Collections</p>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md">
                         <p>69423</p>
                         <p>Total NFTs</p>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md">
                         <p>22234</p>
                         <p>Floor Price (ETH)</p>
                     </div>
@@ -404,7 +414,7 @@
         <div class="title-container d-flex justify-content-center">
             <h2 class="titles">Our latest NFTs</h2>
         </div>
-        <div class="container d-grid align-content-center collection-home">
+        <div class="container collection-home">
             <div class="row">
                 <div class="col">
                     <div class="collection-container">
@@ -639,7 +649,7 @@
         <div class="title-container d-flex justify-content-center">
             <h2 class="titles">Our Team</h2>
         </div>
-        <div class="container d-grid align-content-center team">
+        <div class="container team">
             <div class="row">
                 <div class="col">
                     <div class="team-member">
@@ -651,6 +661,7 @@
                             <div class="member-details">
                                 <h3>El Mahdi Saissi Hassani</h3>
                                 <p class="hover-hint">Hover on me!<br></p>
+                                <p class="click-hint">Click on me!<br></p>
                                 <p><span><span>You</span>Code</span> Learner</p>
                                 <p class="member-contact">Contact info</p>
                                 <div class="member-socials">
@@ -672,6 +683,7 @@
                             <div class="member-details">
                                 <h3>Tobana Skious</h3>
                                 <p class="hover-hint">Hover on me!<br></p>
+                                <p class="click-hint">Click on me!<br></p>
                                 <p><span><span>You</span>Code</span> Learner</p>
                                 <p class="member-contact">Contact info</p>
                                 <div class="member-socials">
@@ -693,6 +705,7 @@
                             <div class="member-details">
                                 <h3>Abdesslam Hannouni</h3>
                                 <p class="hover-hint">Hover on me!<br></p>
+                                <p class="click-hint">Click on me!<br></p>
                                 <p><span><span>You</span>Code</span> Learner</p>
                                 <p class="member-contact">Contact info</p>
                                 <div class="member-socials">
@@ -801,7 +814,7 @@
     <footer>
         <div class="container">
             <div class="row footer-links">
-                <div class="col nftea-footer d-flex align-items-center justify-content-evenly">
+                <div class="col-12 col-md nftea-footer d-flex align-items-center justify-content-evenly">
                     <!-- Coffe Cup logo in footer -->
                     <div class="d-flex cupcup cupcup-header">
                         <div class="cup-container">
@@ -834,7 +847,7 @@
                         <span>NF<span>Tea</span>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md">
                     <h4>Links</h4>
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -843,7 +856,7 @@
                         <li><a href="#">About Us</a></li>
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md">
                     <h4>Support</h4>
                     <ul>
                         <li><a href="#">Support</a></li>
@@ -852,7 +865,7 @@
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md">
                     <h4>Info</h4>
                     <ul>
                         <li><a href="#">Terms of Service</a></li>

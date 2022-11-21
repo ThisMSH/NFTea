@@ -25,12 +25,25 @@ header {
     z-index: 1000;
     height: 0;
 }
+.header-navbar {
+    background: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--main-borders);
+}
 .top-page {
     height: 100vh;
     max-height: 1080px;
     min-height: 600px;
     position: relative;
-    top: 15vh; /* to be modified, should be equal to header's height */
+    top: 122px;
+}
+.top-page-welcome {
+    position: relative;
+    text-align: center;
+}
+.top-page-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .nftea-header {
     position: relative;
@@ -122,6 +135,8 @@ header {
 .text-rotate-container {
     position: relative;
     top: 10%;
+    display: flex;
+    justify-content: center;
 }
 .text-rotate {
     font-size: calc(60vh / 10.8);
@@ -279,10 +294,10 @@ header {
 .container-bg-blue {
     background: var(--second-color-lighter);
 }
-.breif-stats .col {
+.breif-stats .col-12 {
     text-align: center;
 }
-.breif-stats .col p:nth-child(odd) {
+.breif-stats .col-12 p:nth-child(odd) {
     font-size: 50px;
     font-weight: 900;
     background: -webkit-linear-gradient(45deg, var(--third-color) 30%, #fff 50%, var(--third-color) 70%);
@@ -291,7 +306,7 @@ header {
     color: var(--text-color1);
     letter-spacing: 3px;
 }
-.breif-stats .col p:nth-child(even) {
+.breif-stats .col-12 p:nth-child(even) {
     font-size: 28px;
     font-weight: 600;
     color: var(--text-color1);
@@ -324,10 +339,8 @@ header {
     color: var(--text-color1);
     margin: 0 5%;
 }
-/* ==================================================================== */
 .collection-home .row .col {
     margin: 4% 0;
-    /* min-height: 450px; */
 }
 .collection-container {
     position: relative;
@@ -352,7 +365,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
+    width: 800px;
     height: 100px;
     background: linear-gradient(transparent, var(--second-color-light), var(--second-color-lighter), var(--second-color-light), transparent);
     animation: member 4s linear infinite;
@@ -405,12 +418,11 @@ header {
 .collection-1-name h3 {
     font-size: 30px;
     color: var(--text-color1);
-    text-shadow: 1px -1px 10px var(--third-color),
-    1px 1px 10px var(--second-color),
-    -1px 1px 10px var(--second-color),
-    -1px -1px 10px var(--third-color);
+    text-shadow: 2px -2px 10px var(--third-color-light),
+    2px 2px 10px var(--second-color-light),
+    -2px 2px 10px var(--second-color-light),
+    -2px -2px 10px var(--third-color-light);
 }
-/* ==================================================================== */
 .team .row .col {
     margin: 4% 0;
 }
@@ -531,13 +543,17 @@ header {
 .team-member:hover .member-info .member-details {
     transform: translateY(20%);
 }
-.hover-hint {
+.hover-hint, .click-hint {
     display: block;
     transition: 0.5s;
     transition-delay: 0.3s;
     animation: hover-hint 4s ease infinite;
 }
-.team-member:hover .member-info .member-details .hover-hint {
+.click-hint {
+    display: none;
+}
+.team-member:hover .member-info .member-details .hover-hint,
+.team-member:hover .member-info .member-details .click-hint {
     display: none;
     transition: 0.5s;
     transition-delay: 0.3s;
@@ -590,15 +606,18 @@ header {
 footer {
     background: linear-gradient(to bottom, var(--third-color-lighter), var(--third-color));
 }
+.nftea-footer {
+    margin-right: 10%;
+}
 .nftea-footer-name span {
     font-size: 48px;
 }
-.footer-links .col h4 {
+.footer-links .col-md h4 {
     position: relative;
     font-size: 28px;
     color: var(--main-color);
 }
-.footer-links .col h4::after {
+.footer-links .col-md h4::after {
     content: "";
     position: absolute;
     left: 0;
@@ -607,19 +626,19 @@ footer {
     background: var(--main-color);
     border-bottom: 4px solid var(--main-color);
 }
-.footer-links .col ul {
+.footer-links .col-md ul {
     position: relative;
     left: -10%;
     top: 10%;
 }
-.footer-links .col ul li a {
+.footer-links .col-md ul li a {
     color: var(--text-color1);
     font-size: 22px;
     font-weight: 400;
     text-decoration: none;
     transition: 0.3s;
 }
-.footer-links .col ul li a:hover {
+.footer-links .col-md ul li a:hover {
     font-weight: 600;
     text-decoration: underline;
 }
@@ -674,9 +693,32 @@ footer {
     transform: scale(1.5);
 }
 .copyright {
+    position: relative;
     text-align: center;
     letter-spacing: 1px;
     margin: 10px 0;
+}
+.copyright::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: 1px solid var(--main-borders);
+}
+#ScrollTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#ScrollTop img {
+    width: 50px;
+    height: 50px;
 }
 
 @keyframes text-rotate1 {
@@ -790,5 +832,143 @@ footer {
     }
     100% {
         transform: rotateZ(0deg);
+    }
+}
+
+@media (max-width: 660px) {
+    .top-page {
+        height: fit-content;
+        max-height: fit-content;
+    }
+    .top-page .row {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+    .top-page-welcome {
+        height: fit-content;
+        margin-bottom: 20%;
+    }
+    .home-welcome {
+        font-size: 36px;
+        font-weight: 800;
+        position: relative;
+        top: 10%;
+    }
+    .home-welcome span {
+        font-size: 38px;
+    }
+    .text-rotate-container {
+        margin-bottom: 100px;
+    }
+    .text-rotate {
+        font-size: 36px;
+        font-weight: 800;
+    }
+    .btn-home-top {
+        margin: 50px 0;
+    }
+    .collection-home .row .col {
+        margin: 10% 0;
+    }
+    .collection-container {
+        width: 340px;
+        height: 450px;
+    }
+    .collection-1-img {
+        top: 15px;
+        width: 310px;
+        height: 350px;
+    }
+    .collection-1-name {
+        bottom: 20px;
+    }
+    .collection-1-name h3 {
+        font-size: 26px;
+    }
+    .team .row {
+        margin-top: 50px;
+    }
+    .team .row .col {
+        margin: 10% 0;
+    }
+    .hover-hint {
+        display: none;
+    }
+    .click-hint {
+        display: block;
+    }
+    .nftea-footer {
+        margin-right: 0;
+        margin-bottom: 20%;
+    }
+    .footer-links .col-md h4 {
+        font-size: 26px;
+    }
+    .footer-links .col-md h4::after {
+        content: "";
+        border-bottom: 3px solid var(--main-color);
+    }
+    .footer-links .col-md ul {
+        left: 0%;
+        top: 5%;
+        margin-bottom: 10%;
+    }
+    .footer-links .col-md ul li a {
+        color: var(--text-color1);
+        font-size: 22px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer-links .col-md ul li a:hover {
+        font-weight: 600;
+        text-decoration: underline;
+    }
+    .socials-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10%;
+        flex-wrap: wrap;
+    }
+    .socials-footer a {
+    }
+    .socials-footer a:nth-child(1) {
+        -webkit-text-stroke-color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-fill-color: #5865F2;
+        transform: scale(1.2);
+        margin: 0 11px;
+    }
+    .socials-footer a:nth-child(2) {
+        -webkit-text-stroke-color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-fill-color: #1877F2;
+        transform: scale(1.2);
+    }
+    .socials-footer a:nth-child(3) {
+        -webkit-text-stroke-color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-fill-color: #1DA1F2;
+        transform: scale(1.2);
+    }
+    .socials-footer a:nth-child(4) {
+        -webkit-text-stroke-color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-fill-color: #C23584;
+        transform: scale(1.2);
+    }
+    .socials-footer a:nth-child(5) {
+        -webkit-text-stroke-color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-fill-color: #F24100;
+        transform: scale(1.2);
+    }
+    .socials-footer a:nth-child(6) {
+        -webkit-text-stroke-color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-fill-color: #F20000;
+        transform: scale(1.2);
     }
 }

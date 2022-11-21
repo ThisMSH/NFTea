@@ -13,4 +13,19 @@ function hoverBtn(evt) {
     temp.style.setProperty("--x", x + "px");
     temp.style.setProperty("--y", y + "px");
 }
+// Scroll to Top
+let mybutton = document.getElementById("ScrollTop");
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
