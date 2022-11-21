@@ -468,7 +468,7 @@
         opacity: 1;
     }
     100% {
-        transform: translateY(-100px) scale(2.5);
+        transform: translateY(-80px) scale(3);
         background: var(--third-color);
         opacity: 0;
     }
