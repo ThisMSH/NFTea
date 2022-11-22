@@ -29,3 +29,11 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+// Adding "info-on" class on user button
+
+const toggleUserInfo = document.querySelector(".user-header");
+const infoUser = document.querySelector(".user-info")
+
+toggleUserInfo.onclick = function () {
+  infoUser.classList.toggle("info-on");
+}
