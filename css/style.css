@@ -208,8 +208,10 @@ header {
     -webkit-background-clip: text;
     -moz-background-clip: text;
 }
-.nftea-home h1 span, .home-welcome span span,
-.nftea-footer-name span span, .nftea-offcanvas span span {
+.nftea-home h1 span,
+.home-welcome span span,
+.nftea-footer-name span span,
+.nftea-offcanvas span span {
     color: transparent;
     background: #000;
     text-shadow: 0 0 5px var(--second-color);
@@ -807,6 +809,87 @@ footer {
     width: 50px;
     height: 50px;
 }
+/* Collection style */
+.top-collection {
+    margin: 150px 0;
+}
+.carousel {
+    position: relative;
+}
+.carousel-inner {
+    position: relative;
+    inset: 0;
+    background-color: #000;
+    overflow: hidden;
+}
+.carousel-inner::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 100px;
+    background: linear-gradient(transparent, var(--second-color-light), var(--second-color-lighter), var(--second-color-light), transparent);
+    animation: member 4s linear infinite;
+}
+.carousel-item {
+    position: relative;
+    inset: 1%;
+}
+.carousel-item img {
+    width: 98%;
+    margin: 1% 0;
+}
+.top-collection-welcome {
+    font-size: calc(40vh / 10.8);
+    font-weight: 900;
+    position: relative;
+    top: 10%;
+}
+.btn-home-top-mod {
+    text-align: center;
+}
+.btn-home-top-mod a {
+    font-size: 28px;
+}
+.btn-home-top-mod:hover a {
+    font-size: 32px;
+}
+.card .card-img-top {
+    border-radius: 15px;
+}
+.card-title, .card-price {
+    text-align: center;
+    color: var(--main-color);
+}
+.card-text span, .card-ID span, .card-collection span, .card-price span {
+    font-weight: 600;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+.btn-container .add-delete-btn {
+    width: 80px;
+    padding: 10px;
+}
+.add-delete-btn i {
+    font-size: 30px;
+}
+.discover-nav {
+    color: #000 !important;
+    font-size: 22px !important;
+    background: white !important;
+}
+.discover-nav.active {
+    font-size: 22px !important;
+    font-weight: 600;
+    color: var(--text-color2) !important;
+    background: linear-gradient(to bottom, var(--second-color), var(--second-color), var(--second-color-lighter)) !important;
+}
+
 
 @keyframes text-rotate1 {
     0% {

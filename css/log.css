@@ -1,8 +1,5 @@
 *
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -12,12 +9,12 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #03a9f4;
+    background-color: var(--second-color);
     transition: 0.5s;
 }
 body.active
 {
-    background: #f43648;
+    background: var(--third-color);
 }
 
 .Account
@@ -26,8 +23,14 @@ body.active
     width: 800px;
     height: 500px;
     margin: 20px;
-    background-color: #ff0;
+    background-color: var(--second-color-lighter);
     border-radius: 15px;
+    transition: 0.5s;
+}
+
+body.active .Account
+{
+    background-color: var(--third-color-lighter);
 }
 
 .blueBg
@@ -39,14 +42,13 @@ body.active
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255,255,255,0.2);
-    box-shadow: 0.5px 45px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .blueBg .box
 {
     position: relative;
-    width:50%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -70,6 +72,7 @@ body.active
     color: #333;
     font-size: 16px;
     font-weight: 500;
+    border-radius: 5px;
     border: navajowhite;
     border: none;
 }
@@ -88,6 +91,7 @@ body.active
     align-items: center;
     box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
     transition: 0.5s ease-in-out;
+    
     overflow: hidden;
     border-radius: 15px 0 0 15px;
 }
