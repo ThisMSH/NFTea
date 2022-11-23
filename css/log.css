@@ -42,7 +42,7 @@ body.active .Account
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .blueBg .box
@@ -84,6 +84,7 @@ body.active .Account
     left: 0;
     width: 50%;
     height: 100%;
+    padding: 0 5%;
     background: #fff;
     z-index: 1000;
     display: flex;
@@ -91,7 +92,6 @@ body.active .Account
     align-items: center;
     box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
     transition: 0.5s ease-in-out;
-    
     overflow: hidden;
     border-radius: 15px 0 0 15px;
 }
@@ -101,16 +101,6 @@ body.active .Account
     left: 50%;
     border-radius: 0 15px 15px 0;
  }
-
- /* .formBx
- {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    padding: 50px;
-    transition: 0.5s;
-
- } */
 
  .formBx .form
  {
@@ -164,7 +154,6 @@ body.active .Account
     outline: none;
     font-size: 16px;
     border: 1px solid #333;
-
  }
 
 .formBx .form form input[type="submit"]
@@ -173,12 +162,13 @@ body.active .Account
     border: none;
     color: #fff;
     max-width: 100px;
+    border-radius: 5px;
     cursor: pointer;
  }
 
- .formBx .form form .forgot
+ .formBx .form form input:focus
 {
-    color: #333;
+    box-shadow: none;
 }
 
 @media (max-width: 660px)
@@ -231,4 +221,3 @@ body.active .Account
         border-radius: 0 0 15px 15px;
     }
 }
-
