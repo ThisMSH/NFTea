@@ -890,6 +890,69 @@ footer {
     background: linear-gradient(to bottom, var(--second-color), var(--second-color), var(--second-color-lighter)) !important;
 }
 
+/* Statistics */
+
+.ab1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stats-top img {
+    position: relative;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.stats-top p {
+    position: relative;
+    top: -47%;
+    font-size: 130px;
+    font-weight: 600;
+    text-align: center;
+    color: transparent;
+    background: var(--text-color1);
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px var(--main-color);
+}
+
+.ab p {
+    height: 200px;
+    width: 300px;
+}
+
+.ab2 {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--second-color-lighter);
+
+}
+
+.ab2 .ab2-sub1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--second-color-lighter);
+}
+
+.ab2 .ab2-sub1 .im {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 300px;
+}
+.ab2-sub1-nft .card {
+    padding: 10px;
+}
+.ab2-sub1-nft-coll {
+    display: flex;
+    justify-content: center;
+}
+
 
 @keyframes text-rotate1 {
     0% {
