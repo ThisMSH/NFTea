@@ -949,46 +949,11 @@ nav .collection-nav {
     content: "";
     display: none;
 }
-.modal {
-    padding: 10% 0;
-}
 .modal-dialog .modal-content {
     position: relative;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     z-index: 1;
-}
-.modal-dialog::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    width: 100px;
-    height: 100px;
-    background: var(--second-color-lighter);
-    border-radius: 15px;
-    box-shadow: 0 0 5px var(--second-color-lighter),
-    0 0 15px var(--second-color-lighter),
-    0 0 30px var(--second-color-lighter),
-    0 0 60px var(--second-color-lighter);
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-.modal-dialog::after {
-    content: "";
-    position: absolute;
-    right: -90px;
-    bottom: -90px;
-    width: 100px;
-    height: 100px;
-    background: var(--third-color-lighter);
-    border-radius: 15px;
-    box-shadow: 0 0 5px var(--third-color-lighter),
-    0 0 15px var(--third-color-lighter),
-    0 0 30px var(--third-color-lighter),
-    0 0 60px var(--third-color-lighter);
-    transform: translate(-50%, -50%);
-    z-index: 0;
 }
 .modal-content .modal-header {
     border-bottom: 2px solid var(--main-borders);
@@ -1025,6 +990,41 @@ nav .collection-nav {
 }
 .special-btn p {
     margin: 0;
+}
+.faq-container {
+    margin: 50px 0;
+}
+.accordion .accordion-item {
+    border-color: var(--main-borders);
+}
+.accordion-header .accordion-button {
+    background-color: var(--second-color-lighter);
+    font-weight: bold;
+    font-size: 22px;
+}
+.accordion-header .accordion-button:not(.collapsed) {
+    color: var(--text-color2);
+    background-color: var(--second-color);
+}
+.accordion-header .accordion-button:focus {
+    box-shadow: none;
+}
+.accordion-header .accordion-button::after {
+    position: relative;
+    top: 5px;
+    content: "\f055";
+    font-family: 'FontAwesome';
+    font-size: 26px;
+    background-image: none;
+    transform: translate(-50%, -50%);
+}
+.accordion-header .accordion-button:not(.collapsed)::after {
+    content: "\f056";
+    left: -5px;
+    font-family: 'FontAwesome';
+}
+.add-delete-btn {
+    background: linear-gradient(to bottom, var(--second-color-lighter), var(--second-color));
 }
 
 /* Statistics */
