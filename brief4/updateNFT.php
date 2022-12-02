@@ -1,0 +1,15 @@
+<?php
+// update nft
+session_start();
+include "connectData/connect.php";
+if(isset($_POST['submit']))
+{
+    $newName = $_POST['nameUpdatednft'];
+    $newPrice = $_POST['priceUpdate'];
+    $id = $_SESSION['ID_N'];
+    // $sqlColl = mysqli_query($conn,"UPDATE `collection` SET `name` = '$newName' WHERE `collection`.`Cid` = $id"); 
+    $sqlNft = mysqli_query($conn,"UPDATE `nft` SET `name` = '$newName' , `prix` = $newPrice  WHERE `nft`.`Nid` = $id");
+    echo "<script>alert('nft updated')</script>"; 
+    echo "<script>window.location.href = 'collection - log.php'</script>";
+}
+?>
