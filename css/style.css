@@ -863,8 +863,16 @@ footer {
     text-align: center;
     color: var(--main-color);
 }
-.card-text span, .card-ID span, .card-collection span, .card-price span {
+.card-text, .card-ID, .card-collection, .card-price, .card-description {
     font-weight: 600;
+}
+.card-text span, .card-ID span, .card-collection span, .card-price span {
+    font-weight: 400;
+}
+.card-description-details {
+    height: 100px;
+    overflow-y: auto;
+    white-space: pre-warp;
 }
 .btn-container {
     display: flex;
