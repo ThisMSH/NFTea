@@ -198,7 +198,7 @@ header {
     opacity: 1;
     transition: opacity 0.3s 1s;
 }
-.nftea-home h1, .home-welcome span, .nftea-footer-name span, .nftea-offcanvas span {
+.nftea-home h1, .home-welcome span, .nftea-footer-name span, .nftea-offcanvas span, .collX h1, .collY i{
     font-size: calc(100vh / 10.8);
     font-weight: 900;
     color: transparent;
@@ -883,6 +883,11 @@ footer {
     width: 80px;
     padding: 10px;
 }
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .add-delete-btn i {
     font-size: 30px;
 }
@@ -1030,9 +1035,6 @@ nav .collection-nav {
     content: "\f056";
     left: -5px;
     font-family: 'FontAwesome';
-}
-.add-delete-btn {
-    background: linear-gradient(to bottom, var(--second-color-lighter), var(--second-color));
 }
 
 /* Statistics */
@@ -1248,6 +1250,23 @@ nav .collection-nav {
 }
 .ab2-sub2-collection .card {
     background: radial-gradient(rgba(255, 255, 255, 0.4), #2b57ef);
+}
+
+/* Collection container */
+
+.collX h1 {
+    font-size: 50px;
+}
+.collY {
+    font-size: 24px;
+    text-align: center;
+}
+.collY > div:first-child {
+    margin-top: 80px;
+}
+.collY i {
+    font-size: 30px;
+    text-shadow: 0 0 3px var(--main-color);
 }
 
 @keyframes text-rotate1 {
@@ -1732,5 +1751,12 @@ nav .collection-nav {
     }
     .collection-nav {
         gap: 40px;
+    }
+
+    /* Collection container */
+
+    .collX h1 {
+        font-size: 36px;
+        text-align: center;
     }
 }

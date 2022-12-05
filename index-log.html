@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cloud_&_cup.css">
     <script src="https://kit.fontawesome.com/b44b654493.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="js/script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <title>Collection</title>
+    <title>NFTea</title>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-md p-3 header-navbar">
             <div class="container-lg">
-                <a href="index.html" class="navbar-brand d-flex align-items-center logo">
+                <a href="index-log.html" class="navbar-brand d-flex align-items-center logo">
                     <!-- Start of coffee cup in header -->
                     <div class="d-flex cupcup cupcup-header">
                         <div class="cup-container">
@@ -65,25 +65,21 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto gap-2">
                             <li class="nav-item">
-                                <a href="index - log.html" class="nav-link nav-link-mod">
+                                <a href="index-log.html" class="nav-link nav-link-mod active">
                                     <span class="px-lg-3 px-md-2">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="collection - log.html" class="nav-link nav-link-mod active">
+                                <a href="collection-log.html" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Collection</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats - log.html" class="nav-link nav-link-mod">
+                                <a href="stats-log.html" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Stats</span>
                                 </a>
                             </li>
                         </ul>
-                        <!-- Login -->
-                        <!-- <a href="log.html">
-                            <button class="btn rounded-pill px-3 py-2 nav-link-mod btn-login"><span>Login</span></button>
-                        </a> -->
                         <!-- Logout -->
                         <a href="#" class="user-header">
                             <img src="img/default-user-icon-8.jpg" alt="User Default Avatar">
@@ -99,116 +95,368 @@
             </div>
         </nav>
     </header>
+
+    <!-- Main content -->
     <main>
         <!-- Scroll to Top button -->
         <button onclick="topFunction()" id="ScrollTop">
             <img src="img/scroll-top-studioz.png" alt="">
         </button>
         <!-- Top page -->
-        <div class="container top-collection">
-            <div class="row top-collection-row">
-                <div class="col-12 col-md-6">
-                    <p class="top-collection-welcome">
-                        Here where you can Discover Our Collections and NFTs, and even add your own ones. 
+        <div class="container top-page">
+            <div class="row">
+                <div class="col top-page-welcome">
+                    <p class="home-welcome">
+                        Welcome to <span>NF<span>Tea</span></span>,<br>where you can<br>
+                        <div class="text-rotate-container">
+                            <div class="text-rotate" id="t-r1"><p>Explore...</p></div>
+                            <div class="text-rotate" id="t-r2"><p>Collect...</p></div>
+                            <div class="text-rotate" id="t-r3"><p>Sell...</p></div>
+                            <div class="text-rotate" id="t-r4"><p>Mint...</p></div>
+                        </div>
                     </p>
                     <div class="home-welcome-btn">
-                        <div class="btn-home-top btn-home-top-mod">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#addCollection">Add Collection</a>
+                        <div class="btn-home-top">
+                            <a href="collection.html">Collections</a>
                         </div>
                         <div class="btn-home-top">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#addNFT">Add NFT</a>
+                            <a href="stats.html">Statistics</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="col top-page-logo">
+                    <!-- Start of the cloud -->
+                    <div class="cloud">
+                        <div class="cloud-itc-ani">
+                            <div class="itc-cloud"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="svg-itc">
+                                <defs>
+                                    <linearGradient id="gradient-fill-itc" x2="1" y2="1">
+                                        <stop offset="0%" stop-color=#8ea6f6 />
+                                        <stop offset="50%" stop-color=#fff />
+                                        <stop offset="100%" stop-color=#cc9ce4 />
+                                    </linearGradient>
+                                </defs>
+                                <path fill-rule="evenodd" d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm-5.573-12.786L9.252 24h12.875L23 20.429h-7.722l.848-3.483 1.427-.571.68-2.75-1.41.571L18.342 8h-5.129l-2.081 8.429-1.444.58L9 19.768l1.427-.554z"/>
+                            </svg>
                         </div>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active" data-bs-interval="3000">
-                            <img src="img/nft4.jpg" class="d-block" alt="NFT Image">
-                          </div>
-                          <div class="carousel-item" data-bs-interval="3000">
-                            <img src="img/nft3.png" class="d-block" alt="NFT Image">
-                          </div>
-                          <div class="carousel-item" data-bs-interval="3000">
-                            <img src="img/nft4.jpg" class="d-block" alt="NFT Image">
-                          </div>
+                        <div class="cloud-eth-ani">
+                            <div class="eth-cloud"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="svg-eth">
+                                <defs>
+                                    <linearGradient id="gradient-fill-eth" x1="1" y1="1">
+                                        <stop offset="0%" stop-color=#8ea6f6 />
+                                        <stop offset="50%" stop-color=#fff />
+                                        <stop offset="100%" stop-color=#cc9ce4 />
+                                    </linearGradient>
+                                </defs>
+                                <g fill-rule="evenodd">
+                                    <path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm7.994-15.781L16.498 4 9 16.22l7.498 4.353 7.496-4.354zM24 17.616l-7.502 4.351L9 17.617l7.498 10.378L24 17.616z"/>
+                                    <g fill-rule="nonzero">
+                                        <path fill-opacity=".298" d="M16.498 4v8.87l7.497 3.35zm0 17.968v6.027L24 17.616z"/>
+                                        <path fill-opacity=".801" d="M16.498 20.573l7.497-4.353-7.497-3.348z"/>
+                                        <path fill-opacity=".298" d="M9 16.22l7.498 4.353v-7.701z"/>
+                                    </g>
+                                </g>
+                            </svg>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
+                        <div class="cloud-btc-ani">
+                            <div class="btc-cloud"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="svg-btc">
+                                <defs>
+                                    <linearGradient id="gradient-fill-btc" x2="1" y1="1">
+                                        <stop offset="0%" stop-color=#8ea6f6 />
+                                        <stop offset="50%" stop-color=#fff />
+                                        <stop offset="100%" stop-color=#cc9ce4 />
+                                    </linearGradient>
+                                </defs>
+                                <path fill-rule="evenodd" d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm7.189-17.98c.314-2.096-1.283-3.223-3.465-3.975l.708-2.84-1.728-.43-.69 2.765c-.454-.114-.92-.22-1.385-.326l.695-2.783L15.596 6l-.708 2.839c-.376-.086-.746-.17-1.104-.26l.002-.009-2.384-.595-.46 1.846s1.283.294 1.256.312c.7.175.826.638.805 1.006l-.806 3.235c.048.012.11.03.18.057l-.183-.045-1.13 4.532c-.086.212-.303.531-.793.41.018.025-1.256-.313-1.256-.313l-.858 1.978 2.25.561c.418.105.828.215 1.231.318l-.715 2.872 1.727.43.708-2.84c.472.127.93.245 1.378.357l-.706 2.828 1.728.43.715-2.866c2.948.558 5.164.333 6.097-2.333.752-2.146-.037-3.385-1.588-4.192 1.13-.26 1.98-1.003 2.207-2.538zm-3.95 5.538c-.533 2.147-4.148.986-5.32.695l.95-3.805c1.172.293 4.929.872 4.37 3.11zm.535-5.569c-.487 1.953-3.495.96-4.47.717l.86-3.45c.975.243 4.118.696 3.61 2.733z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="nft-cloud"></div>
+                            <img class="cloud-icon" src="img/icons/nft.png" alt="NFT icon" style="--i:3">
+                        </div>
+                    </div>
+                    <!-- Start of the Tea Cup -->
+                    <div class="cupcup">
+                        <div class="cup-container">
+                            <div class="cup-handle"></div>
+                            <div class="cup">
+                                <div class="cup-top">
+                                    <div class="cup-vapour">
+                                        <span style="--i:1"></span>
+                                        <span style="--i:5"></span>
+                                        <span style="--i:12"></span>
+                                        <span style="--i:6"></span>
+                                        <span style="--i:8"></span>
+                                        <span style="--i:3"></span>
+                                        <span style="--i:14"></span>
+                                        <span style="--i:19"></span>
+                                        <span style="--i:11"></span>
+                                        <span style="--i:4"></span>
+                                        <span style="--i:7"></span>
+                                        <span style="--i:10"></span>
+                                        <span style="--i:2"></span>
+                                        <span style="--i:17"></span>
+                                    </div>
+                                    <div class="cup-vapour-two">
+                                        <div class="mid-vapour vap1"></div>
+                                        <div class="mid-vapour vap2"></div>
+                                    </div>
+                                    <div class="cup-circle-top"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nftea-home">
+                        <h1>NF<span>Tea</span></h1>
+                    </div>
                 </div>
             </div>
-            <!-- The modal to create new NFT -->
-            <div class="modal fade" id="addNFT">
-                <div class="modal-dialog">
-                    <form class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Add a New NFT</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput01" placeholder="NFT name" required>
-                                <label for="floatingInput01">The name of your NFT</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput02" placeholder="Collection name" required>
-                                <label for="floatingInput02">The name of its Collection</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingInput03" placeholder="NFT price" required>
-                                <label for="floatingInput03">The price of your NFT</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">Description</label>
-                            </div>
-                            <div class="">
-                                <label for="formFile" class="form-label">Upload your NFT</label>
-                                <input class="form-control" type="file" id="formFile" required>
-                            </div>
-                        </div>
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <input type="submit" class="btn btn-primary" value="Add"></input>
-                        </div>
-                    </form>
+        </div>
+        <!-- Page break purple start -->
+        <div class="break-display">
+            <div class="page-break p-b-purple">
+                <svg id="ejzxV0PmoEn1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="1920" height="300">
+                    <defs>
+                        <linearGradient id="gradient-fill-p" x2="0" y2="1">
+                            <stop offset="0%" stop-color=#fff />
+                            <stop offset="100%" stop-color=#c895e3 />
+                        </linearGradient>
+                    </defs>
+                    <g>
+                        <path d="M-3.759262,146.192424l87.67102,55.790649l10.868308-7.245539L194.043948,91.850883q32.604925.000001,32.604925.724554t111.943575,159.401854l30.068986-5.796431L485.31461,171.55181l46.009171-50.356495L665.728527,63.955558l55.428372.362277l80.787758,114.479514l28.257602-6.158708L935.262572,87.865836l33.691756,3.62277l54.703818,78.976373l28.926761,26.201344l80.434371,83.137472l17.772336-1.777233l96.563026-140.105251l45.615663,3.554468l124.110148,56.57527l35.840878-2.369645L1564.887047,67.128172l67.238671,2.962056l47.985308,159.951026l19.253364-3.554467L1805.702202,93.194265l36.729495,4.443084l79.226771,51.515092l1.159352,153.171264-1925.089678.175086q-1.575979-156.176984-1.487404-156.306367Z" fill="#fff" stroke-width="0"/>
+                        <g transform="translate(0 0.000001)">
+                            <line x1="51.647722" y1="-53.492284" x2="-51.647722" y2="53.492284" transform="translate(141.455698 145.839596)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-59.566851" y1="-85.0955" x2="59.56685" y2="85.095501" transform="translate(282.442534 172.535167)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-66.439948" y1="41.565879" x2="66.439948" y2="-41.565879" transform="translate(424.486561 210.173561)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="73.149401" y1="-31.256232" x2="-73.149401" y2="31.256232" transform="translate(592.550174 95.13099)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="46.147944" y1="64.476206" x2="-46.147944" y2="-64.476206" transform="translate(759.631916 119.841414)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="58.527798" y1="-47.369228" x2="-58.527798" y2="47.369227" transform="translate(880.292682 131.860259)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-30.850166" y1="-44.634283" x2="30.850167" y2="44.634283" transform="translate(995.926108 130.438088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-42.906133" y1="-43.60493" x2="42.906134" y2="43.60493" transform="translate(1093.69558 239.210341)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="50.044054" y1="-72.609372" x2="-50.044053" y2="72.609372" transform="translate(1198.909653 208.176476)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="71.611861" y1="32.435961" x2="-71.611861" y2="-32.435961" transform="translate(1353.732812 169.295448)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="61.508056" y1="-71.006769" x2="-61.508056" y2="71.006769" transform="translate(1508.968551 131.238691)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="25.373832" y1="83.308304" x2="-25.373832" y2="-83.308304" transform="translate(1655.677829 148.01355)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="57.494463" y1="-71.86808" x2="-57.494463" y2="71.86808" transform="translate(1751.746385 160.333792)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(-5.517539 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(1914.482461 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <rect width="46" height="46" rx="3" ry="3" transform="translate(186 54)"/>
+                            <rect width="40" height="40" rx="3" ry="3" transform="translate(331 243)"/>
+                            <rect width="60" height="60" rx="3" ry="3" transform="translate(475 119)"/>
+                            <rect width="70" height="70" rx="3" ry="3" transform="translate(654 0)"/>
+                            <rect width="38" height="38" rx="3" ry="3" transform="translate(795.099707 170)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(926.540684 50)"/>
+                            <rect width="36" height="36" rx="3" ry="3" transform="translate(1018.708844 164)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1129 275)"/>
+                            <rect width="55" height="55" rx="3" ry="3" transform="translate(1242.062771 90)"/>
+                            <rect width="47" height="47" rx="3" ry="3" transform="translate(1409 193)"/>
+                            <rect width="75" height="75" rx="3" ry="3" transform="translate(1559-2.145577)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1677 223)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(1800 55)"/>
+                            <rect width="32" height="32" rx="3" ry="3" transform="translate(66.999999 190)"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="page-break p-b-purple">
+                <svg id="ejzxV0PmoEn1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="1920" height="300">
+                    <defs>
+                        <linearGradient id="gradient-fill-p" x2="0" y2="1">
+                            <stop offset="0%" stop-color=#fff />
+                            <stop offset="100%" stop-color=#c895e3 />
+                        </linearGradient>
+                    </defs>
+                    <g>
+                        <path d="M-3.759262,146.192424l87.67102,55.790649l10.868308-7.245539L194.043948,91.850883q32.604925.000001,32.604925.724554t111.943575,159.401854l30.068986-5.796431L485.31461,171.55181l46.009171-50.356495L665.728527,63.955558l55.428372.362277l80.787758,114.479514l28.257602-6.158708L935.262572,87.865836l33.691756,3.62277l54.703818,78.976373l28.926761,26.201344l80.434371,83.137472l17.772336-1.777233l96.563026-140.105251l45.615663,3.554468l124.110148,56.57527l35.840878-2.369645L1564.887047,67.128172l67.238671,2.962056l47.985308,159.951026l19.253364-3.554467L1805.702202,93.194265l36.729495,4.443084l79.226771,51.515092l1.159352,153.171264-1925.089678.175086q-1.575979-156.176984-1.487404-156.306367Z" fill="#fff" stroke-width="0"/>
+                        <g transform="translate(0 0.000001)">
+                            <line x1="51.647722" y1="-53.492284" x2="-51.647722" y2="53.492284" transform="translate(141.455698 145.839596)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-59.566851" y1="-85.0955" x2="59.56685" y2="85.095501" transform="translate(282.442534 172.535167)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-66.439948" y1="41.565879" x2="66.439948" y2="-41.565879" transform="translate(424.486561 210.173561)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="73.149401" y1="-31.256232" x2="-73.149401" y2="31.256232" transform="translate(592.550174 95.13099)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="46.147944" y1="64.476206" x2="-46.147944" y2="-64.476206" transform="translate(759.631916 119.841414)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="58.527798" y1="-47.369228" x2="-58.527798" y2="47.369227" transform="translate(880.292682 131.860259)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-30.850166" y1="-44.634283" x2="30.850167" y2="44.634283" transform="translate(995.926108 130.438088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-42.906133" y1="-43.60493" x2="42.906134" y2="43.60493" transform="translate(1093.69558 239.210341)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="50.044054" y1="-72.609372" x2="-50.044053" y2="72.609372" transform="translate(1198.909653 208.176476)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="71.611861" y1="32.435961" x2="-71.611861" y2="-32.435961" transform="translate(1353.732812 169.295448)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="61.508056" y1="-71.006769" x2="-61.508056" y2="71.006769" transform="translate(1508.968551 131.238691)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="25.373832" y1="83.308304" x2="-25.373832" y2="-83.308304" transform="translate(1655.677829 148.01355)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="57.494463" y1="-71.86808" x2="-57.494463" y2="71.86808" transform="translate(1751.746385 160.333792)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(-5.517539 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(1914.482461 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <rect width="46" height="46" rx="3" ry="3" transform="translate(186 54)"/>
+                            <rect width="40" height="40" rx="3" ry="3" transform="translate(331 243)"/>
+                            <rect width="60" height="60" rx="3" ry="3" transform="translate(475 119)"/>
+                            <rect width="70" height="70" rx="3" ry="3" transform="translate(654 0)"/>
+                            <rect width="38" height="38" rx="3" ry="3" transform="translate(795.099707 170)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(926.540684 50)"/>
+                            <rect width="36" height="36" rx="3" ry="3" transform="translate(1018.708844 164)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1129 275)"/>
+                            <rect width="55" height="55" rx="3" ry="3" transform="translate(1242.062771 90)"/>
+                            <rect width="47" height="47" rx="3" ry="3" transform="translate(1409 193)"/>
+                            <rect width="75" height="75" rx="3" ry="3" transform="translate(1559-2.145577)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1677 223)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(1800 55)"/>
+                            <rect width="32" height="32" rx="3" ry="3" transform="translate(66.999999 190)"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <!-- Brief statistics -->
+        <div class="container-bg-purple">
+            <div class="title-container d-flex justify-content-center">
+                <h2 class="titles">Quick Statistics</h2>
+            </div>
+            <div class="container">
+                <div class="row breif-stats">
+                    <div class="col-12 col-md">
+                        <p>45324</p>
+                        <p>Total Collections</p>
+                    </div>
+                    <div class="col-12 col-md">
+                        <p>69423</p>
+                        <p>Total NFTs</p>
+                    </div>
+                    <div class="col-12 col-md">
+                        <p>22234</p>
+                        <p>Floor Price (ETH)</p>
+                    </div>
                 </div>
             </div>
-            <!-- The modal to create new Collection -->
-            <div class="modal fade" id="addCollection">
-                <div class="modal-dialog">
-                    <form class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Add a New Collection</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Page break purple end -->
+        <div class="break-display">
+            <div class="page-break p-b-purple p-b-180">
+                <svg id="ejzxV0PmoEn1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="1920" height="300">
+                    <defs>
+                        <linearGradient id="gradient-fill-p" x2="0" y2="1">
+                            <stop offset="0%" stop-color=#fff />
+                            <stop offset="100%" stop-color=#c895e3 />
+                        </linearGradient>
+                    </defs>
+                    <g>
+                        <path d="M-3.759262,146.192424l87.67102,55.790649l10.868308-7.245539L194.043948,91.850883q32.604925.000001,32.604925.724554t111.943575,159.401854l30.068986-5.796431L485.31461,171.55181l46.009171-50.356495L665.728527,63.955558l55.428372.362277l80.787758,114.479514l28.257602-6.158708L935.262572,87.865836l33.691756,3.62277l54.703818,78.976373l28.926761,26.201344l80.434371,83.137472l17.772336-1.777233l96.563026-140.105251l45.615663,3.554468l124.110148,56.57527l35.840878-2.369645L1564.887047,67.128172l67.238671,2.962056l47.985308,159.951026l19.253364-3.554467L1805.702202,93.194265l36.729495,4.443084l79.226771,51.515092l1.159352,153.171264-1925.089678.175086q-1.575979-156.176984-1.487404-156.306367Z" fill="#fff" stroke-width="0"/>
+                        <g transform="translate(0 0.000001)">
+                            <line x1="51.647722" y1="-53.492284" x2="-51.647722" y2="53.492284" transform="translate(141.455698 145.839596)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-59.566851" y1="-85.0955" x2="59.56685" y2="85.095501" transform="translate(282.442534 172.535167)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-66.439948" y1="41.565879" x2="66.439948" y2="-41.565879" transform="translate(424.486561 210.173561)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="73.149401" y1="-31.256232" x2="-73.149401" y2="31.256232" transform="translate(592.550174 95.13099)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="46.147944" y1="64.476206" x2="-46.147944" y2="-64.476206" transform="translate(759.631916 119.841414)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="58.527798" y1="-47.369228" x2="-58.527798" y2="47.369227" transform="translate(880.292682 131.860259)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-30.850166" y1="-44.634283" x2="30.850167" y2="44.634283" transform="translate(995.926108 130.438088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-42.906133" y1="-43.60493" x2="42.906134" y2="43.60493" transform="translate(1093.69558 239.210341)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="50.044054" y1="-72.609372" x2="-50.044053" y2="72.609372" transform="translate(1198.909653 208.176476)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="71.611861" y1="32.435961" x2="-71.611861" y2="-32.435961" transform="translate(1353.732812 169.295448)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="61.508056" y1="-71.006769" x2="-61.508056" y2="71.006769" transform="translate(1508.968551 131.238691)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="25.373832" y1="83.308304" x2="-25.373832" y2="-83.308304" transform="translate(1655.677829 148.01355)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="57.494463" y1="-71.86808" x2="-57.494463" y2="71.86808" transform="translate(1751.746385 160.333792)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(-5.517539 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(1914.482461 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <rect width="46" height="46" rx="3" ry="3" transform="translate(186 54)"/>
+                            <rect width="40" height="40" rx="3" ry="3" transform="translate(331 243)"/>
+                            <rect width="60" height="60" rx="3" ry="3" transform="translate(475 119)"/>
+                            <rect width="70" height="70" rx="3" ry="3" transform="translate(654 0)"/>
+                            <rect width="38" height="38" rx="3" ry="3" transform="translate(795.099707 170)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(926.540684 50)"/>
+                            <rect width="36" height="36" rx="3" ry="3" transform="translate(1018.708844 164)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1129 275)"/>
+                            <rect width="55" height="55" rx="3" ry="3" transform="translate(1242.062771 90)"/>
+                            <rect width="47" height="47" rx="3" ry="3" transform="translate(1409 193)"/>
+                            <rect width="75" height="75" rx="3" ry="3" transform="translate(1559-2.145577)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1677 223)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(1800 55)"/>
+                            <rect width="32" height="32" rx="3" ry="3" transform="translate(66.999999 190)"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="page-break p-b-purple p-b-180">
+                <svg id="ejzxV0PmoEn1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="1920" height="300">
+                    <defs>
+                        <linearGradient id="gradient-fill-p" x2="0" y2="1">
+                            <stop offset="0%" stop-color=#fff />
+                            <stop offset="100%" stop-color=#c895e3 />
+                        </linearGradient>
+                    </defs>
+                    <g>
+                        <path d="M-3.759262,146.192424l87.67102,55.790649l10.868308-7.245539L194.043948,91.850883q32.604925.000001,32.604925.724554t111.943575,159.401854l30.068986-5.796431L485.31461,171.55181l46.009171-50.356495L665.728527,63.955558l55.428372.362277l80.787758,114.479514l28.257602-6.158708L935.262572,87.865836l33.691756,3.62277l54.703818,78.976373l28.926761,26.201344l80.434371,83.137472l17.772336-1.777233l96.563026-140.105251l45.615663,3.554468l124.110148,56.57527l35.840878-2.369645L1564.887047,67.128172l67.238671,2.962056l47.985308,159.951026l19.253364-3.554467L1805.702202,93.194265l36.729495,4.443084l79.226771,51.515092l1.159352,153.171264-1925.089678.175086q-1.575979-156.176984-1.487404-156.306367Z" fill="#fff" stroke-width="0"/>
+                        <g transform="translate(0 0.000001)">
+                            <line x1="51.647722" y1="-53.492284" x2="-51.647722" y2="53.492284" transform="translate(141.455698 145.839596)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-59.566851" y1="-85.0955" x2="59.56685" y2="85.095501" transform="translate(282.442534 172.535167)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-66.439948" y1="41.565879" x2="66.439948" y2="-41.565879" transform="translate(424.486561 210.173561)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="73.149401" y1="-31.256232" x2="-73.149401" y2="31.256232" transform="translate(592.550174 95.13099)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="46.147944" y1="64.476206" x2="-46.147944" y2="-64.476206" transform="translate(759.631916 119.841414)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="58.527798" y1="-47.369228" x2="-58.527798" y2="47.369227" transform="translate(880.292682 131.860259)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-30.850166" y1="-44.634283" x2="30.850167" y2="44.634283" transform="translate(995.926108 130.438088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="-42.906133" y1="-43.60493" x2="42.906134" y2="43.60493" transform="translate(1093.69558 239.210341)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="50.044054" y1="-72.609372" x2="-50.044053" y2="72.609372" transform="translate(1198.909653 208.176476)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="71.611861" y1="32.435961" x2="-71.611861" y2="-32.435961" transform="translate(1353.732812 169.295448)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="61.508056" y1="-71.006769" x2="-61.508056" y2="71.006769" transform="translate(1508.968551 131.238691)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="25.373832" y1="83.308304" x2="-25.373832" y2="-83.308304" transform="translate(1655.677829 148.01355)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="57.494463" y1="-71.86808" x2="-57.494463" y2="71.86808" transform="translate(1751.746385 160.333792)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(-5.517539 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <line x1="78.482462" y1="50.606178" x2="-78.482461" y2="-50.606177" transform="translate(1914.482461 144.449088)" fill="none" stroke="inherit" stroke-width="3"/>
+                            <rect width="46" height="46" rx="3" ry="3" transform="translate(186 54)"/>
+                            <rect width="40" height="40" rx="3" ry="3" transform="translate(331 243)"/>
+                            <rect width="60" height="60" rx="3" ry="3" transform="translate(475 119)"/>
+                            <rect width="70" height="70" rx="3" ry="3" transform="translate(654 0)"/>
+                            <rect width="38" height="38" rx="3" ry="3" transform="translate(795.099707 170)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(926.540684 50)"/>
+                            <rect width="36" height="36" rx="3" ry="3" transform="translate(1018.708844 164)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1129 275)"/>
+                            <rect width="55" height="55" rx="3" ry="3" transform="translate(1242.062771 90)"/>
+                            <rect width="47" height="47" rx="3" ry="3" transform="translate(1409 193)"/>
+                            <rect width="75" height="75" rx="3" ry="3" transform="translate(1559-2.145577)"/>
+                            <rect width="25" height="25" rx="3" ry="3" transform="translate(1677 223)"/>
+                            <rect width="45" height="45" rx="3" ry="3" transform="translate(1800 55)"/>
+                            <rect width="32" height="32" rx="3" ry="3" transform="translate(66.999999 190)"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <!-- Some of our collection -->
+        <div class="title-container d-flex justify-content-center">
+            <h2 class="titles">Our latest NFTs</h2>
+        </div>
+        <div class="container collection-home">
+            <div class="row">
+                <div class="col">
+                    <div class="collection-container">
+                        <div class="collection-1"></div>
+                        <div class="collection-1-img">
+                            <img src="img/worryHypeCry.png" alt="member image">
                         </div>
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInput01" placeholder="NFT name" required>
-                                <label for="floatingInput01">The name of your Collection</label>
-                            </div>
+                        <div class="collection-1-name">
+                            <h3>Name of the NFT</h3>
                         </div>
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <input type="submit" class="btn btn-primary" value="Add"></input>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="collection-container">
+                        <div class="collection-1"></div>
+                        <div class="collection-1-img">
+                            <img src="img/worryHypeCry.png" alt="member image">
                         </div>
-                    </form>
+                        <div class="collection-1-name">
+                            <h3>Name of the NFT</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="collection-container">
+                        <div class="collection-1"></div>
+                        <div class="collection-1-img">
+                            <img src="img/worryHypeCry.png" alt="member image">
+                        </div>
+                        <div class="collection-1-name">
+                            <h3>Name of the NFT</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -303,324 +551,14 @@
                 </svg>
             </div>
         </div>
-        <!-- Content -->
+        <!-- About Us -->
         <div class="container-bg-blue">
-            <div class="container py-5">
+            <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <div>
-                            <nav>
-                                <div class="nav nav-tabs collection-nav" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="collections-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ALL Collections</button>
-                                    <button class="nav-link" id="nfts-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ALL NFTs</button>
-                                    <button class="nav-link" id="my-collections-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My Collections</button>
-                                    <button class="nav-link" id="my-nfts-tab" data-bs-toggle="tab" data-bs-target="#nav-contact1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My NFTs</button>
-                                </div>
-                            </nav>
-                            <br>
-                            <div class="tab-content" id="nav-tabContent">
-                                <!-- All Collections content -->
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="collections-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/1.jpg" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> Collection title <i class="fa-solid fa-paintbrush"></i></h5>
-                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>9irsh</span></p>
-                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                    </div>
-                                                    <div class="btn-container">
-                                                        <button type="button" class="btn btn-primary add-delete-btn special-btn" data-bs-toggle="modal" data-bs-target="#moreCollection">
-                                                            <i class="bi bi-patch-plus-fill"></i>
-                                                            <p>Click to see NFTs</p>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- The modal for NFTs inside a collection -->
-                                <div class="modal fade" id="moreCollection">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-xl modal-fullscreen-sm-down">
-                                        <div class="modal-content">
-                                            <!-- Modal Header -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"><i class="fa-solid fa-signature"></i> Collection name <i class="fa-solid fa-paintbrush"></i></h4>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                            </div>
-                                            <!-- Modal body -->
-                                            <div class="modal-body">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <!-- The start of NFT column -->
-                                                        <div class="col-12 col-md-4 mb-4">
-                                                            <div class="card p-3">
-                                                                <img src="img/nft2.jpg" class="card-img-top" alt="Collection image">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                            <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
-                                                                        </svg>
-                                                                        NFT title
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                            <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
-                                                                            <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
-                                                                            <path d="M16 7h4" />
-                                                                        </svg>
-                                                                    </h5>
-                                                                    <div class="container">
-                                                                        <div class="row">
-                                                                            <div class="col-8">
-                                                                                <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span>9irsh</span></p>
-                                                                                <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#9354353</span></p>
-                                                                                <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                                            </div>
-                                                                            <div class="col-4">
-                                                                                <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span>0.234</span> ETH</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col">
-                                                                                <p class="card-description">Description:</p>
-                                                                                <p class="card-description-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum recusandae similique temporibus nam soluta dolorem iste quis consequatur in</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- The end of NFT column -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Modal footer -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- ALL NFTs content -->
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nfts-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/nft2.jpg" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
-                                                            </svg>
-                                                            NFT title
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
-                                                                <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
-                                                                <path d="M16 7h4" />
-                                                            </svg>
-                                                        </h5>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span>9irsh</span></p>
-                                                                    <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#9354353</span></p>
-                                                                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                                </div>
-                                                                <div class="col-4">
-                                                                    <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span>0.234</span> ETH</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <p class="card-description">Description:</p>
-                                                                    <p class="card-description-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum recusandae similique temporibus nam soluta dolorem iste quis consequatur in</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- The modal for NFT's description -->
-                                <div class="modal fade" id="nftDescription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Description of&nbsp;<span>NFT</span></h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>Description here</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- My collections content -->
-                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="my-collections-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/1.jpg" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> Collection title <i class="fa-solid fa-paintbrush"></i></h5>
-                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>9irsh</span></p>
-                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                    </div>
-                                                    <div class="btn-container">
-                                                        <button type="button" class="btn btn-primary add-delete-btn" data-bs-toggle="modal" data-bs-target="#updateCollection">
-                                                            <i class="fa-solid fa-pen-to-square"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-primary add-delete-btn" data-bs-toggle="modal" data-bs-target="#deleteNFTCollection">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- The update modal for collection -->
-                                    <div class="modal fade" id="updateCollection">
-                                        <div class="modal-dialog">
-                                            <form class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title"><i class="fa-solid fa-pencil"></i> Modify your Collection</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                </div>
-                                                <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    <div class="form-floating">
-                                                        <input type="text" class="form-control" id="floatingInput01" placeholder="NFT name" required>
-                                                        <label for="floatingInput01">The new name of your Collection</label>
-                                                    </div>
-                                                </div>
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <input type="submit" class="btn btn-primary" value="Update"></input>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- The delete modal for collection -->
-                                    <div class="modal fade" id="deleteNFTCollection">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title warning-title">
-                                                        <i class="fa-solid fa-triangle-exclamation"></i>
-                                                        <p>ARE YOU SURE THAT YOU WANT TO DELETE YOUR COLLECTION?</p>
-                                                        <i class="fa-solid fa-triangle-exclamation"></i>
-                                                    </h4>
-                                                </div>
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Remove</button>
-                                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- My NFTs content -->
-                                <div class="tab-pane fade" id="nav-contact1" role="tabpanel" aria-labelledby="my-nfts-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/nft2.jpg" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
-                                                            </svg>
-                                                            NFT title
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
-                                                                <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
-                                                                <path d="M16 7h4" />
-                                                            </svg>
-                                                        </h5>
-                                                        <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span>9irsh</span></p>
-                                                        <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#9354353</span></p>
-                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                        <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span>0.234</span> ETH</p>
-                                                        <div class="btn-container">
-                                                            <button type="button" class="btn btn-primary add-delete-btn" data-bs-toggle="modal" data-bs-target="#updateNFT">
-                                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                            </button>
-                                                            <button type="button" class="btn btn-primary add-delete-btn" data-bs-toggle="modal" data-bs-target="#deleteNFT">
-                                                                <i class="fa-solid fa-trash"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- The update modal for NFT -->
-                                    <div class="modal fade" id="updateNFT">
-                                        <div class="modal-dialog">
-                                            <form class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title"><i class="fa-solid fa-pencil"></i> Modify your NFT</h4>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                </div>
-                                                <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control" id="floatingInput01" placeholder="NFT name" required>
-                                                        <label for="floatingInput01">The new name of your NFT</label>
-                                                    </div>
-                                                    <div class="form-floating mb-3">
-                                                        <input type="number" class="form-control" id="floatingInput03" placeholder="NFT price" required>
-                                                        <label for="floatingInput03">The new price of your NFT</label>
-                                                    </div>
-                                                    <div class="">
-                                                        <label for="formFile" class="form-label">Upload a new image for your NFT</label>
-                                                        <input class="form-control" type="file" id="formFile" required>
-                                                    </div>
-                                                </div>
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <input type="submit" class="btn btn-primary" value="Update"></input>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- The delete modal for NFT -->
-                                    <div class="modal fade" id="deleteNFT">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title warning-title">
-                                                        <i class="fa-solid fa-triangle-exclamation"></i>
-                                                        <p>ARE YOU SURE THAT YOU WANT TO DELETE YOUR NFT?</p>
-                                                        <i class="fa-solid fa-triangle-exclamation"></i>
-                                                    </h4>
-                                                </div>
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Remove</button>
-                                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col d-flex flex-column align-items-center">
+                        <h2 class="titles">About Us</h2>
+                        <div class="home-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam fugit numquam officiis ab quidem quae voluptate quisquam rem, mollitia recusandae, necessitatibus iure perferendis libero voluptatem. Id, aliquam nostrum ea perspiciatis quaerat reprehenderit repellat tempora corrupti numquam pariatur fuga vel illum alias quia accusantium maxime dicta laborum fugit. Nulla, porro beatae.</div>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -716,99 +654,73 @@
                 </svg>
             </div>
         </div>
-        <!-- FAQ section -->
+        <!-- Our Team -->
         <div class="title-container d-flex justify-content-center">
-            <h2 class="titles">FAQ</h2>
+            <h2 class="titles">Our Team</h2>
         </div>
-        <div class="container faq-container">
+        <div class="container team">
             <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="accordion" id="accordionFAQ">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                    What is an NFT?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionFAQ">
-                                <div class="accordion-body">
-                                    An <strong>NFT</strong> (non-fungible token) is a unique digital item stored on a blockchain. NFTs can represent almost anything, and serve as a digital record of ownership.
-                                </div>
-                            </div>
+                <div class="col">
+                    <div class="team-member">
+                        <div class="member"></div>
+                        <div class="member-img">
+                            <img src="img/worryTongue.gif" alt="member image">
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    What is a crypto wallet?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionFAQ">
-                                <div class="accordion-body">
-                                    A <strong>crypto wallet</strong> is a program that helps you buy, sell, and store your cryptocurrency and (in many cases) your NFTs. Think of it as your address on the blockchain— you can send and receive items from it, it stores your items, and you want to keep it locked and safe. In this article, we’ll walk through the types of crypto wallets and how to set one up.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What is a floor price?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionFAQ">
-                                <div class="accordion-body">
-                                    <strong>Floor price</strong> is the lowest price for collection items, rather than the average item price, and is updated in real-time. Dutch auctions are not included in floor price calculations.
+                        <div class="member-info">
+                            <div class="member-details">
+                                <h3>El Mahdi Saissi Hassani</h3>
+                                <p class="hover-hint">Hover on me!<br></p>
+                                <p class="click-hint">Click on me!<br></p>
+                                <p><span><span>You</span>Code</span> Learner</p>
+                                <p class="member-contact">Contact info</p>
+                                <div class="member-socials">
+                                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="accordion" id="accordionFAQ2">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                    aria-expanded="true" aria-controls="collapseFour">
-                                    What is minting?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordionFAQ2">
-                                <div class="accordion-body">
-                                    <strong>Minting</strong> an NFT is the process of writing a digital item to the blockchain. This establishes its immutable record of authenticity and ownership.
+                <div class="col">
+                    <div class="team-member">
+                        <div class="member member-purple"></div>
+                        <div class="member-img member-img-purple">
+                            <img src="img/sali.jpg" alt="member image">
+                        </div>
+                        <div class="member-info">
+                            <div class="member-details">
+                                <h3>Tobana Skious</h3>
+                                <p class="hover-hint">Hover on me!<br></p>
+                                <p class="click-hint">Click on me!<br></p>
+                                <p><span><span>You</span>Code</span> Learner</p>
+                                <p class="member-contact">Contact info</p>
+                                <div class="member-socials">
+                                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    How do I delete an NFT?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                data-bs-parent="#accordionFAQ2">
-                                <div class="accordion-body">
-                                    Just click on the "Trash <i class="fa-solid fa-trash"></i>" button, you can delete your NFTs only.
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="team-member">
+                        <div class="member"></div>
+                        <div class="member-img">
+                            <img src="img/103.gif" alt="member image">
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    How can I add an NFT?
-                                </button>
-                            </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                data-bs-parent="#accordionFAQ2">
-                                <div class="accordion-body">
-                                    At the top of Collection page click "Add NFT" and fill the form, you must have a collection for it first.
+                        <div class="member-info">
+                            <div class="member-details">
+                                <h3>Abdesslam Hannouni</h3>
+                                <p class="hover-hint">Hover on me!<br></p>
+                                <p class="click-hint">Click on me!<br></p>
+                                <p><span><span>You</span>Code</span> Learner</p>
+                                <p class="member-contact">Contact info</p>
+                                <div class="member-socials">
+                                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -983,9 +895,5 @@
         </div>
         <div class="copyright">© 2022 NFTea, Inc. All rights reserved.</div>
     </footer>
-    
-    <script>
-
-    </script>
 </body>
 </html>

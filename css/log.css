@@ -146,7 +146,7 @@ body.active .Account
     font-weight: 500;
  }
 
- .formBx .form form input
+ .formBx .form form input, .formBx .form form textarea
  {
     width: 100%;
     margin-bottom: 20px;
@@ -166,7 +166,7 @@ body.active .Account
     cursor: pointer;
  }
 
- .formBx .form form input:focus
+ .formBx .form form input:focus, .formBx .form form textarea:focus
 {
     box-shadow: none;
 }

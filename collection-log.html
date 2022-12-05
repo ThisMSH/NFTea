@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-md p-3 header-navbar">
             <div class="container-lg">
-                <a href="index.html" class="navbar-brand d-flex align-items-center logo">
+                <a href="index-log.html" class="navbar-brand d-flex align-items-center logo">
                     <!-- Start of coffee cup in header -->
                     <div class="d-flex cupcup cupcup-header">
                         <div class="cup-container">
@@ -65,25 +65,31 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto gap-2">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link nav-link-mod">
+                                <a href="index-log.html" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="collection.html" class="nav-link nav-link-mod active">
+                                <a href="collection-log.html" class="nav-link nav-link-mod active">
                                     <span class="px-lg-3 px-md-2">Collection</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.html" class="nav-link nav-link-mod">
+                                <a href="stats-log.html" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Stats</span>
                                 </a>
                             </li>
                         </ul>
-                        <!-- Login -->
-                        <a href="log.html">
-                            <button class="btn rounded-pill px-3 py-2 nav-link-mod btn-login"><span>Login</span></button>
+                        <!-- Logout -->
+                        <a href="#" class="user-header">
+                            <img src="img/default-user-icon-8.jpg" alt="User Default Avatar">
                         </a>
+                        <div class="user-container">
+                            <div class="user-info">
+                                <p>El Mahdi Saissi Hassani</p>
+                                <button class="btn rounded-pill px-3 py-2 btn-login btn-logout"><span>Logout</span></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,10 +109,10 @@
                     </p>
                     <div class="home-welcome-btn">
                         <div class="btn-home-top btn-home-top-mod">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add Collection</a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#addCollection">Add Collection</a>
                         </div>
                         <div class="btn-home-top">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add NFT</a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#addNFT">Add NFT</a>
                         </div>
                     </div>
                 </div>
@@ -141,6 +147,68 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                       </div>
+                </div>
+            </div>
+            <!-- The modal to create new NFT -->
+            <div class="modal fade" id="addNFT">
+                <div class="modal-dialog">
+                    <form class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add a New NFT</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput01" placeholder="NFT name" required>
+                                <label for="floatingInput01">The name of your NFT</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput02" placeholder="Collection name" required>
+                                <label for="floatingInput02">The name of its Collection</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingInput03" placeholder="NFT price" required>
+                                <label for="floatingInput03">The price of your NFT</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Description</label>
+                            </div>
+                            <div class="">
+                                <label for="formFile" class="form-label">Upload your NFT</label>
+                                <input class="form-control" type="file" id="formFile" required>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" value="Add"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- The modal to create new Collection -->
+            <div class="modal fade" id="addCollection">
+                <div class="modal-dialog">
+                    <form class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add a New Collection</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInput01" placeholder="NFT name" required>
+                                <label for="floatingInput01">The name of your Collection</label>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" value="Add"></input>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -245,6 +313,7 @@
                                 <div class="nav nav-tabs collection-nav" id="nav-tab" role="tablist">
                                     <button class="nav-link active" id="collections-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ALL Collections</button>
                                     <button class="nav-link" id="nfts-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ALL NFTs</button>
+                                    <button class="nav-link" id="my-collections-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My Collections</button>
                                 </div>
                             </nav>
                             <br>
@@ -262,7 +331,7 @@
                                                         <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
                                                     </div>
                                                     <div class="btn-container">
-                                                        <a href="coll.html" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient" data-bs-toggle="modal" data-bs-target="#moreCollection">
+                                                        <a href="coll-log.html" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
                                                             <i class="bi bi-patch-plus-fill"></i>
                                                             <p>Click to see NFTs</p>
                                                         </a>
@@ -311,6 +380,35 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- My collections content -->
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="my-collections-tab" tabindex="0">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 col-md-4 mb-4">
+                                                <div class="card p-3">
+                                                    <img src="img/1.jpg" class="card-img-top" alt="Collection image">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> Collection title <i class="fa-solid fa-paintbrush"></i></h5>
+                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>9irsh</span></p>
+                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
+                                                    </div>
+                                                    <div class="btn-container">
+                                                        <a href="UpdateColl.html" type="button" class="btn btn-primary add-delete-btn">
+                                                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-primary add-delete-btn">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </button>
+                                                        <a href="coll-log.html" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
+                                                            <i class="bi bi-patch-plus-fill"></i>
+                                                            <p>Click to see NFTs</p>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
