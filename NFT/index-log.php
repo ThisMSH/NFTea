@@ -121,10 +121,10 @@ session_start()?>
                     </p>
                     <div class="home-welcome-btn">
                         <div class="btn-home-top">
-                            <a href="collection.php">Collections</a>
+                            <a href="collection-log.php">Collections</a>
                         </div>
                         <div class="btn-home-top">
-                            <a href="stats.php">Statistics</a>
+                            <a href="stats-log.php">Statistics</a>
                         </div>
                     </div>
                 </div>
