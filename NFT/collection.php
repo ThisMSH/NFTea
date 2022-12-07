@@ -1,3 +1,5 @@
+<?php
+include "connectData/connect.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +21,7 @@
     <header>
         <nav class="navbar navbar-expand-md p-3 header-navbar">
             <div class="container-lg">
-                <a href="index.html" class="navbar-brand d-flex align-items-center logo">
+                <a href="index.php" class="navbar-brand d-flex align-items-center logo">
                     <!-- Start of coffee cup in header -->
                     <div class="d-flex cupcup cupcup-header">
                         <div class="cup-container">
@@ -65,23 +67,23 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto gap-2">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link nav-link-mod">
+                                <a href="index.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="collection.html" class="nav-link nav-link-mod active">
+                                <a href="collection.php" class="nav-link nav-link-mod active">
                                     <span class="px-lg-3 px-md-2">Collection</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.html" class="nav-link nav-link-mod">
+                                <a href="stats.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Stats</span>
                                 </a>
                             </li>
                         </ul>
                         <!-- Login -->
-                        <a href="log.html">
+                        <a href="log.php">
                             <button class="btn rounded-pill px-3 py-2 nav-link-mod btn-login"><span>Login</span></button>
                         </a>
                     </div>
@@ -103,10 +105,10 @@
                     </p>
                     <div class="home-welcome-btn">
                         <div class="btn-home-top btn-home-top-mod">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add Collection</a>
+                            <a href="log.php" data-bs-toggle="" data-bs-target="">Add Collection</a>
                         </div>
                         <div class="btn-home-top">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add NFT</a>
+                            <a href="log.php" data-bs-toggle="" data-bs-target="">Add NFT</a>
                         </div>
                     </div>
                 </div>
@@ -253,22 +255,32 @@
                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="collections-tab" tabindex="0">
                                     <div class="container">
                                         <div class="row">
+                                        <?php 
+                                                $Coll = mysqli_query($conn,"select * from collection");
+                                                $i = 0;
+                                                while($row1 = mysqli_fetch_assoc($Coll) ) { 
+                                                    $p = $row1['Pid'];
+                                                                                                        
+                                                            $name = mysqli_query($conn,"select * from users where Pid = $p");
+                                                            $user = mysqli_fetch_assoc($name);
+                                                            ?>
                                             <div class="col-12 col-md-4 mb-4">
                                                 <div class="card p-3">
                                                     <img src="img/1.jpg" class="card-img-top" alt="Collection image">
                                                     <div class="card-body">
-                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> Collection title <i class="fa-solid fa-paintbrush"></i></h5>
-                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>9irsh</span></p>
-                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
+                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> <?php echo $row1['name'] ?> <i class="fa-solid fa-paintbrush"></i></h5>
+                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span><?php echo $user['username']?></span></p>
+                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $row1['Cid']?></span></p>
                                                     </div>
                                                     <div class="btn-container">
-                                                        <a href="coll.html" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
+                                                        <a href="coll.php?ID=<?php echo $row1['Cid']?>" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
                                                             <i class="bi bi-patch-plus-fill"></i>
                                                             <p>Click to see NFTs</p>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -276,16 +288,23 @@
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nfts-tab" tabindex="0">
                                     <div class="container">
                                         <div class="row">
+                                        <?php
+                                        $Nft = mysqli_query($conn,"select * from nft ");
+                                        while($row2 = mysqli_fetch_assoc($Nft)){
+                                                $p = $row2['Pid'];
+                                                $n = mysqli_query($conn,"select * from users where Pid = $p");
+                                                $name = mysqli_fetch_assoc($n);
+                                                ?>
                                             <div class="col-12 col-md-4 mb-4">
                                                 <div class="card p-3">
-                                                    <img src="img/Coll3/3.png" class="card-img-top" alt="Collection image">
+                                                    <img src="<?php echo $row2['image']?>" class="card-img-top" alt="Collection image">
                                                     <div class="card-body">
                                                         <h5 class="card-title">
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                 <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
                                                             </svg>
-                                                            NFT title
+                                                            <?php echo $row2['name']?>
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                 <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
@@ -296,22 +315,23 @@
                                                         <div class="container">
                                                             <div class="row">
                                                                 <div class="col-8">
-                                                                    <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span>9irsh</span></p>
-                                                                    <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#9354353</span></p>
-                                                                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
+                                                                    <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span><?php echo $name['username']?></span></p>
+                                                                    <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#</span><?php echo $row2['Cid']?></p>
+                                                                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $row2['Nid']?></span></p>
                                                                 </div>
                                                                 <div class="col-4">
-                                                                    <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span>0.234</span> ETH</p>
+                                                                    <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span><?php echo $row2['prix']?></span> ETH</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <p class="card-description">Description:</p>
-                                                                    <p class="card-description-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum recusandae similique temporibus nam soluta dolorem iste quis consequatur in</p>
+                                                                    <p class="card-description-details"><?= $row2['description']?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php }?>
                                                 </div>
                                             </div>
                                         </div>

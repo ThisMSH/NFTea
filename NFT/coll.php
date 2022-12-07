@@ -1,3 +1,7 @@
+<?php
+include "connectData/connect.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
     <header>
         <nav class="navbar navbar-expand-md p-3 header-navbar">
             <div class="container-lg">
-                <a href="index.html" class="navbar-brand d-flex align-items-center logo">
+                <a href="index-log.php" class="navbar-brand d-flex align-items-center logo">
                     <!-- Start of coffee cup in header -->
                     <div class="d-flex cupcup cupcup-header">
                         <div class="cup-container">
@@ -65,25 +69,31 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto gap-2">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link nav-link-mod">
+                                <a href="index-log.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="collection.html" class="nav-link nav-link-mod active">
+                                <a href="collection-log.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Collection</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.html" class="nav-link nav-link-mod">
+                                <a href="stats-log.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Stats</span>
                                 </a>
                             </li>
                         </ul>
-                        <!-- Login -->
-                        <a href="log.html">
-                            <button class="btn rounded-pill px-3 py-2 nav-link-mod btn-login"><span>Login</span></button>
+                        <!-- Logout -->
+                        <a href="#" class="user-header">
+                            <img src="img/default-user-icon-8.jpg" alt="User Default Avatar">
                         </a>
+                        <div class="user-container">
+                            <div class="user-info">
+                                <p><?php echo $_SESSION['username'] ?></p>
+                                <a href="connectData/destroyed.php" class="btn rounded-pill px-3 py-2 btn-login btn-logout"><span>Logout</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,52 +105,30 @@
             <img src="img/scroll-top-studioz.png" alt="">
         </button>
         <!-- Top page -->
+        <?php 
+        $idColl = $_GET['ID'];
+        $collTable = mysqli_query($conn,"select * from collection where Cid = $idColl");
+        $coll = mysqli_fetch_assoc($collTable);
+        $p =$coll['Pid'];
+        $name = mysqli_query($conn,"select * from users where Pid = $p");
+        $user = mysqli_fetch_assoc($name);
+        $nftTable = mysqli_query($conn,"select * from nft where Cid = $idColl");
+        
+        ?>
         <div class="container top-collection">
             <div class="row top-collection-row">
-                <div class="col-12 col-md-6">
-                    <p class="top-collection-welcome">
-                        Here where you can Discover Our Collections and NFTs, and even add your own ones. 
-                    </p>
-                    <div class="home-welcome-btn">
-                        <div class="btn-home-top btn-home-top-mod">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add Collection</a>
-                        </div>
-                        <div class="btn-home-top">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add NFT</a>
-                        </div>
-                    </div>
+                <div class="col collX">
+                    <h1 class="card-title top-collection-welcome d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-signature"></i><p><?php echo $coll['name'] ?></p><i class="fa-solid fa-paintbrush"></i>
+                    </h1>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="3000">
-                                <img src="img/Coll1/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="img/Coll2/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="img/Coll3/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="img/Coll4/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
+            </div>
+            <div class="row collY">
+                <div class="col-12">
+                    <p class="card-text"><i class="fa-solid fa-palette"></i> This collection is made by: <span><?php echo $user['username']?></span></p>
+                </div>
+                <div class="col-12">
+                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $coll['Cid'] ?></span></p>
                 </div>
             </div>
         </div>
@@ -239,87 +227,50 @@
         <div class="container-bg-blue">
             <div class="container py-5">
                 <div class="row">
-                    <div class="col">
-                        <div>
-                            <nav>
-                                <div class="nav nav-tabs collection-nav" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="collections-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ALL Collections</button>
-                                    <button class="nav-link" id="nfts-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ALL NFTs</button>
-                                </div>
-                            </nav>
-                            <br>
-                            <div class="tab-content" id="nav-tabContent">
-                                <!-- All Collections content -->
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="collections-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/1.jpg" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> Collection title <i class="fa-solid fa-paintbrush"></i></h5>
-                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>9irsh</span></p>
-                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                    </div>
-                                                    <div class="btn-container">
-                                                        <a href="coll.html" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
-                                                            <i class="bi bi-patch-plus-fill"></i>
-                                                            <p>Click to see NFTs</p>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <?php while($row2 = mysqli_fetch_assoc($nftTable)){
+                                                $p = $row2['Pid'];
+                                                $n = mysqli_query($conn,"select * from users where Pid = $p");
+                                                $name = mysqli_fetch_assoc($n);
+                                                ?>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card p-3">
+                            <img src="<?php echo $row2['image']?>" class="card-img-top" alt="Collection image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
+                                    </svg>
+                                    <?php echo $row2['name']?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
+                                        <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
+                                        <path d="M16 7h4" />
+                                    </svg>
+                                </h5>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span><?php echo $name['username']?></span></p>
+                                            <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#<?php echo $row2['Cid']?></span></p>
+                                            <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $row2['Nid']?></span></p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span><?php echo $row2['prix']?></span> ETH</p>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- ALL NFTs content -->
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nfts-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/Coll3/3.png" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
-                                                            </svg>
-                                                            NFT title
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
-                                                                <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
-                                                                <path d="M16 7h4" />
-                                                            </svg>
-                                                        </h5>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span>9irsh</span></p>
-                                                                    <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#9354353</span></p>
-                                                                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                                </div>
-                                                                <div class="col-4">
-                                                                    <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span>0.234</span> ETH</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <p class="card-description">Description:</p>
-                                                                    <p class="card-description-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum recusandae similique temporibus nam soluta dolorem iste quis consequatur in</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-description">Description:</p>
+                                            <p class="card-description-details"><?php echo $row2['description']?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -412,106 +363,6 @@
                         </g>
                     </g>
                 </svg>
-            </div>
-        </div>
-        <!-- FAQ section -->
-        <div class="title-container d-flex justify-content-center">
-            <h2 class="titles">FAQ</h2>
-        </div>
-        <div class="container faq-container">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="accordion" id="accordionFAQ">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                    What is an NFT?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionFAQ">
-                                <div class="accordion-body">
-                                    An <strong>NFT</strong> (non-fungible token) is a unique digital item stored on a blockchain. NFTs can represent almost anything, and serve as a digital record of ownership.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    What is a crypto wallet?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionFAQ">
-                                <div class="accordion-body">
-                                    A <strong>crypto wallet</strong> is a program that helps you buy, sell, and store your cryptocurrency and (in many cases) your NFTs. Think of it as your address on the blockchain— you can send and receive items from it, it stores your items, and you want to keep it locked and safe. In this article, we’ll walk through the types of crypto wallets and how to set one up.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What is a floor price?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionFAQ">
-                                <div class="accordion-body">
-                                    <strong>Floor price</strong> is the lowest price for collection items, rather than the average item price, and is updated in real-time. Dutch auctions are not included in floor price calculations.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="accordion" id="accordionFAQ2">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                    aria-expanded="true" aria-controls="collapseFour">
-                                    What is minting?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordionFAQ2">
-                                <div class="accordion-body">
-                                    <strong>Minting</strong> an NFT is the process of writing a digital item to the blockchain. This establishes its immutable record of authenticity and ownership.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    How do I delete an NFT?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                data-bs-parent="#accordionFAQ2">
-                                <div class="accordion-body">
-                                    Just click on the "Trash <i class="fa-solid fa-trash"></i>" button, you can delete your NFTs only.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    How can I add an NFT?
-                                </button>
-                            </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                data-bs-parent="#accordionFAQ2">
-                                <div class="accordion-body">
-                                    At the top of Collection page click "Add NFT" and fill the form, you must have a collection for it first.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- Page break purple start -->

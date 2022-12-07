@@ -1,18 +1,17 @@
+<?php
+include "connectData/connect.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to our NFT store.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cloud_&_cup.css">
-    <script src="https://kit.fontawesome.com/b44b654493.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script defer src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/b44b654493.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <title>Collection</title>
 </head>
 <body>
     <!-- Header -->
@@ -65,82 +64,57 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto gap-2">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link nav-link-mod">
+                                <a href="index.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="collection.html" class="nav-link nav-link-mod active">
+                                <a href="collection.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Collection</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.html" class="nav-link nav-link-mod">
+                                <a href="stats.php" class="nav-link nav-link-mod active">
                                     <span class="px-lg-3 px-md-2">Stats</span>
                                 </a>
                             </li>
                         </ul>
                         <!-- Login -->
-                        <a href="log.html">
+                        <a href="log.php">
                             <button class="btn rounded-pill px-3 py-2 nav-link-mod btn-login"><span>Login</span></button>
                         </a>
+                        <!-- Logout -->
+                        <!-- <a href="#" class="user-header">
+                            <img src="img/default-user-icon-8.jpg" alt="User Default Avatar">
+                        </a>
+                        <div class="user-container">
+                            <div class="user-info">
+                                <p>El Mahdi Saissi Hassani</p>
+                                <button class="btn rounded-pill px-3 py-2 btn-login btn-logout"><span>Logout</span></button>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
+
+    <main> 
         <!-- Scroll to Top button -->
         <button onclick="topFunction()" id="ScrollTop">
             <img src="img/scroll-top-studioz.png" alt="">
         </button>
         <!-- Top page -->
         <div class="container top-collection">
-            <div class="row top-collection-row">
+            <div class="row change-flex">
                 <div class="col-12 col-md-6">
                     <p class="top-collection-welcome">
-                        Here where you can Discover Our Collections and NFTs, and even add your own ones. 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum magnam quos debitis dicta dolorem asperiores enim. Reprehenderit ea quia officiis sequi perferendis quidem quae velit. Illo nam ut porro. 
                     </p>
-                    <div class="home-welcome-btn">
-                        <div class="btn-home-top btn-home-top-mod">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add Collection</a>
-                        </div>
-                        <div class="btn-home-top">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add NFT</a>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="3000">
-                                <img src="img/Coll1/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="img/Coll2/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="img/Coll3/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="img/Coll4/1.png" class="d-block" alt="NFT Image">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
+                <div class="col-12 col-md-6 stats-top">
+                    <img src="img/7367890.png" alt="">
+                    <p>Statistics</p>
                 </div>
             </div>
         </div>
@@ -190,6 +164,7 @@
                     </g>
                 </svg>
             </div>
+
             <div class="page-break p-b-blue">
                 <svg id="ejzxV0PmoEn1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="1920" height="300">
                     <defs>
@@ -235,89 +210,116 @@
                 </svg>
             </div>
         </div>
-        <!-- Content -->
-        <div class="container-bg-blue">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col">
-                        <div>
-                            <nav>
-                                <div class="nav nav-tabs collection-nav" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="collections-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ALL Collections</button>
-                                    <button class="nav-link" id="nfts-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ALL NFTs</button>
-                                </div>
-                            </nav>
-                            <br>
-                            <div class="tab-content" id="nav-tabContent">
-                                <!-- All Collections content -->
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="collections-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/1.jpg" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> Collection title <i class="fa-solid fa-paintbrush"></i></h5>
-                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>9irsh</span></p>
-                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                    </div>
-                                                    <div class="btn-container">
-                                                        <a href="coll.html" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
-                                                            <i class="bi bi-patch-plus-fill"></i>
-                                                            <p>Click to see NFTs</p>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- ALL NFTs content -->
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nfts-tab" tabindex="0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 mb-4">
-                                                <div class="card p-3">
-                                                    <img src="img/Coll3/3.png" class="card-img-top" alt="Collection image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
-                                                            </svg>
-                                                            NFT title
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                                <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
-                                                                <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
-                                                                <path d="M16 7h4" />
-                                                            </svg>
-                                                        </h5>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="col-8">
-                                                                    <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span>9irsh</span></p>
-                                                                    <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#9354353</span></p>
-                                                                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
-                                                                </div>
-                                                                <div class="col-4">
-                                                                    <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span>0.234</span> ETH</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <p class="card-description">Description:</p>
-                                                                    <p class="card-description-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum recusandae similique temporibus nam soluta dolorem iste quis consequatur in</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="ab2">
+            <br><br>
+            <?php 
+                $x = mysqli_num_rows(mysqli_query( $conn,"SELECT * from nft"));
+                $y = mysqli_num_rows(mysqli_query( $conn,"SELECT * from collection"));
+            ?>
+            <div class="ab2-sub1">
+                <div class="im-parent">
+                    <div class="im">
+                        <img src="img/icons/7116338.png" alt="" height="100px" width="100px">
+                        <div class="desc">
+                            <h3>Total NFTs</h3>
+                            <div class="total-stats">
+                                <p><?php echo $x?></p>
+                                <i class="fa-solid fa-arrow-trend-up"></i>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="im-parent">
+                    <div class="im">
+                        <img src="img/icons/7115958.png" alt="" height="100px" width="100px">
+                        <div class="desc">
+                            <h3>Total Collections</h3>
+                            <div class="total-stats">
+                                <p><?php echo $y?></p>
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php 
+            $ch = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM nft order by prix"));
+            $id = $ch['Pid'];
+            $name = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM users where Pid = $id"))
+            ?>
+            <div class="ab2-sub1">
+                <div class="ab2-sub1-nft">
+                    <h3>The Cheapest NFT</h3>
+                    <div class="card p-3">
+                        <img src="<?php echo $ch['image']?>" class="card-img-top" alt="NFT image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
+                                </svg>
+                                <?php echo $ch['name']?>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
+                                    <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
+                                    <path d="M16 7h4" />
+                                </svg>
+                            </h5>
+                            <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span><?php echo $name['username']?></span></p>
+                            <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#<?php echo $ch['Cid']?></span></p>
+                            <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $ch['Nid']?></span></p>
+                            <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span><?php echo $ch['prix']?></span> ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <?php 
+                $chE = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM nft order by prix DESC"));
+                $idE = $chE['Pid'];
+                $namE = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM users where Pid = $idE"))
+                ?>
+                <div class="ab2-sub1-nft">
+                    <h3>The Most Expensive NFT</h3>
+                    <div class="card p-3">
+                        <img src="<?php echo $chE['image']?>" class="card-img-top" alt="NFT image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
+                                </svg>
+                                <?php echo $chE['name']?>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
+                                    <path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" />
+                                    <path d="M16 7h4" />
+                                </svg>
+                            </h5>
+                            <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span><?php echo $namE['username']?></span></p>
+                            <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#<?php echo $chE['Cid']?></span></p>
+                            <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $chE['Nid']?></span></p>
+                            <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span><?php echo $chE['prix']?></span> ETH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php 
+            $sql = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM nft group by Cid order by count(Cid) desc"));
+            $id = $sql['Cid'];
+            $a =  mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM collection where Cid = $id"));
+            $idP = $a['Pid'];
+            $ab =  mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM users where Pid = $idP"));
+            ?>
+            <div class="ab2-sub1">
+                <div class="ab2-sub2-collection">
+                    <h3>Rank 1 Collection</h3>
+                    <div class="card p-3">
+                        <img src="img/1.jpg" class="card-img-top" alt="Collection image">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-signature"></i> <?php echo $a['name']?>  <i class="fa-solid fa-paintbrush"></i></h5>
+                            <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span><?php echo $ab['username']?></span></p>
+                            <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $a['Cid']?></span></p>
                         </div>
                     </div>
                 </div>
@@ -681,9 +683,5 @@
         </div>
         <div class="copyright">© 2022 NFTea, Inc. All rights reserved.</div>
     </footer>
-    
-    <script>
-
-    </script>
 </body>
 </html>

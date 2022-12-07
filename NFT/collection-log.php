@@ -1,3 +1,7 @@
+<?php
+include "connectData/connect.php";
+session_start();
+$personID = $_SESSION['Pid'];?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
     <header>
         <nav class="navbar navbar-expand-md p-3 header-navbar">
             <div class="container-lg">
-                <a href="index.html" class="navbar-brand d-flex align-items-center logo">
+                <a href="index-log.php" class="navbar-brand d-flex align-items-center logo">
                     <!-- Start of coffee cup in header -->
                     <div class="d-flex cupcup cupcup-header">
                         <div class="cup-container">
@@ -65,25 +69,31 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto gap-2">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link nav-link-mod">
+                                <a href="index-log.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="collection.html" class="nav-link nav-link-mod active">
+                                <a href="collection-log.php" class="nav-link nav-link-mod active">
                                     <span class="px-lg-3 px-md-2">Collection</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.html" class="nav-link nav-link-mod">
+                                <a href="stats-log.php" class="nav-link nav-link-mod">
                                     <span class="px-lg-3 px-md-2">Stats</span>
                                 </a>
                             </li>
                         </ul>
-                        <!-- Login -->
-                        <a href="log.html">
-                            <button class="btn rounded-pill px-3 py-2 nav-link-mod btn-login"><span>Login</span></button>
+                        <!-- Logout -->
+                        <a href="#" class="user-header">
+                            <img src="img/default-user-icon-8.jpg" alt="User Default Avatar">
                         </a>
+                        <div class="user-container">
+                            <div class="user-info">
+                                <p><?php echo $_SESSION['username'] ?></p>
+                                <a href="connectData/destroyed.php" class="btn rounded-pill px-3 py-2 btn-login btn-logout"><span>Logout</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,10 +113,10 @@
                     </p>
                     <div class="home-welcome-btn">
                         <div class="btn-home-top btn-home-top-mod">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add Collection</a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#addCollection">Add Collection</a>
                         </div>
                         <div class="btn-home-top">
-                            <a href="log.html" data-bs-toggle="" data-bs-target="">Add NFT</a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#addNFT">Add NFT</a>
                         </div>
                     </div>
                 </div>
@@ -141,6 +151,68 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                       </div>
+                </div>
+            </div>
+            <!-- The modal to create new NFT -->
+            <div class="modal fade" id="addNFT">
+                <div class="modal-dialog">
+                    <form action="addNFT.php" method="post" enctype="multipart/form-data" class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add a New NFT</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput01" placeholder="NFT name"  name="nom" required>
+                                <label for="floatingInput01">The name of your NFT</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput02" placeholder="Collection name" name="collection" required>
+                                <label for="floatingInput02">The name of its Collection</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingInput03" placeholder="NFT price" name="prix" required>
+                                <label for="floatingInput03">The price of your NFT</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" name="description" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Description</label>
+                            </div>
+                            <div class="">
+                                <label for="formFile" class="form-label">Upload your NFT</label>
+                                <input class="form-control" type="file" id="formFile" name="my_image" required>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Add"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- The modal to create new Collection -->
+            <div class="modal fade" id="addCollection">
+                <div class="modal-dialog">
+                    <form action="creerColl.php" method="post" class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add a New Collection</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-floating">
+                                <input type="text" name="Cname" class="form-control" id="floatingInput01" placeholder="NFT name" required>
+                                <label for="floatingInput01">The name of your Collection</label>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Add"></input>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -245,6 +317,7 @@
                                 <div class="nav nav-tabs collection-nav" id="nav-tab" role="tablist">
                                     <button class="nav-link active" id="collections-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ALL Collections</button>
                                     <button class="nav-link" id="nfts-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ALL NFTs</button>
+                                    <button class="nav-link" id="my-collections-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My Collections</button>
                                 </div>
                             </nav>
                             <br>
@@ -253,22 +326,32 @@
                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="collections-tab" tabindex="0">
                                     <div class="container">
                                         <div class="row">
+                                        <?php 
+                                                $Coll = mysqli_query($conn,"select * from collection");
+                                                $i = 0;
+                                                while($row1 = mysqli_fetch_assoc($Coll) ) { 
+                                                    $p = $row1['Pid'];
+                                                                                                        
+                                                            $name = mysqli_query($conn,"select * from users where Pid = $p");
+                                                            $user = mysqli_fetch_assoc($name);
+                                                            ?>
                                             <div class="col-12 col-md-4 mb-4">
                                                 <div class="card p-3">
                                                     <img src="img/1.jpg" class="card-img-top" alt="Collection image">
                                                     <div class="card-body">
-                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> Collection title <i class="fa-solid fa-paintbrush"></i></h5>
-                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>9irsh</span></p>
-                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
+                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i> <?php echo $row1['name'] ?>  <i class="fa-solid fa-paintbrush"></i></h5>
+                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span><?php echo $user['username']?></span></p>
+                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $row1['Cid']?></span></p>
                                                     </div>
                                                     <div class="btn-container">
-                                                        <a href="coll.html" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
+                                                        <a href="controle.php?ID=<?php echo $row1['Cid']?>" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
                                                             <i class="bi bi-patch-plus-fill"></i>
                                                             <p>Click to see NFTs</p>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -276,16 +359,23 @@
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nfts-tab" tabindex="0">
                                     <div class="container">
                                         <div class="row">
+                                        <?php
+                                        $Nft = mysqli_query($conn,"select * from nft ");
+                                        while($row2 = mysqli_fetch_assoc($Nft)){
+                                                $p = $row2['Pid'];
+                                                $n = mysqli_query($conn,"select * from users where Pid = $p");
+                                                $name = mysqli_fetch_assoc($n);
+                                                ?>
                                             <div class="col-12 col-md-4 mb-4">
                                                 <div class="card p-3">
-                                                    <img src="img/Coll3/3.png" class="card-img-top" alt="Collection image">
+                                                    <img src="<?php echo $row2['image']?>" class="card-img-top" alt="Collection image">
                                                     <div class="card-body">
                                                         <h5 class="card-title">
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-signature" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                 <path d="M3 17c3.333 -3.333 5 -6 5 -8c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 4.877 2.5 6c1.5 2 2.5 2.5 3.5 1l2 -3c.333 2.667 1.333 4 3 4c.53 0 2.639 -2 3 -2c.517 0 1.517 .667 3 2" />
                                                             </svg>
-                                                            NFT title
+                                                            <?php echo $row2['name']?>
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-writing-sign" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                                                 <path d="M3 19c3.333 -2 5 -4 5 -6c0 -3 -1 -3 -2 -3s-2.032 1.085 -2 3c.034 2.048 1.658 2.877 2.5 4c1.5 2 2.5 2.5 3.5 1c.667 -1 1.167 -1.833 1.5 -2.5c1 2.333 2.333 3.5 4 3.5h2.5" />
@@ -296,24 +386,60 @@
                                                         <div class="container">
                                                             <div class="row">
                                                                 <div class="col-8">
-                                                                    <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span>9irsh</span></p>
-                                                                    <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#9354353</span></p>
-                                                                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#9354353</span></p>
+                                                                    <p class="card-text"><i class="fa-solid fa-user-large"></i> Owned by: <span><?php echo $name['username']?></span></p>
+                                                                    <p class="card-collection"><i class="fa-solid fa-folder"></i> Collection: <span>#<?php echo $row2['Cid']?></span></p>
+                                                                    <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $row2['Nid']?></span></p>
                                                                 </div>
                                                                 <div class="col-4">
-                                                                    <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span>0.234</span> ETH</p>
+                                                                    <p class="card-price"><i class="fa-solid fa-coins"></i> Price:<br><br> <span><?php echo $row2['prix']?></span> ETH</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col">
                                                                     <p class="card-description">Description:</p>
-                                                                    <p class="card-description-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum recusandae similique temporibus nam soluta dolorem iste quis consequatur in</p>
+                                                                    <p class="card-description-details"><?php echo $row2['description']?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php }?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- My collections content -->
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="my-collections-tab" tabindex="0">
+                                    <div class="container">
+                                        <div class="row">
+                                        <?php
+                                                
+                                                $CollMY = mysqli_query($conn,"select * from collection where Pid = $personID");
+                                                while($row2 = mysqli_fetch_assoc($CollMY) ) { 
+                                            ?>
+                                            <div class="col-12 col-md-4 mb-4">
+                                                <div class="card p-3">
+                                                    <img src="img/1.jpg" class="card-img-top" alt="Collection image">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"><i class="fa-solid fa-signature"></i>  <?php echo $row2['name'] ?>  <i class="fa-solid fa-paintbrush"></i></h5>
+                                                        <p class="card-text"><i class="fa-solid fa-palette"></i> Made by: <span>me</span></p>
+                                                        <p class="card-ID"><i class="fa-solid fa-hashtag"></i> ID: <span>#<?php echo $row2['Cid']?></span></p>
+                                                    </div>
+                                                    <div class="btn-container">
+                                                        <a href="UpdateColl.php?ID=<?php echo $row2['Cid']?>" type="button" class="btn btn-primary add-delete-btn">
+                                                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        </a>
+                                                        <a href="deleteColl.php?ID=<?php echo $row2['Cid']?>" type="button" class="btn btn-primary add-delete-btn">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </a>
+                                                        <a href="controle.php?ID=<?php echo $row2['Cid']?>" type="button" class="btn btn-primary add-delete-btn special-btn bg-gradient">
+                                                            <i class="bi bi-patch-plus-fill"></i>
+                                                            <p>Click to see NFTs</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php }?>
                                         </div>
                                     </div>
                                 </div>
